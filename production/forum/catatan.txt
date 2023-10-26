@@ -1,0 +1,12 @@
+*Dalam belajar php disarankan menggunakan xampp.
+
+1. folder forum simpan di htdocs
+2. buat database dengan nama "ri32" tanpa tanda kutip, atau jika ingin menyesuaikan dengan database yang anda gunakan, silahkan ubah file "conn.php"
+3. import file "forum.sql.zip" dengan menggunakan phpmyadmin.
+4. buka browser dan jalankan program dengan mengetik :
+http://localhost/forum/forum.php
+
+
+semoga bermanfaat:)
+
+my Blog : http://ri32.wordpress.com

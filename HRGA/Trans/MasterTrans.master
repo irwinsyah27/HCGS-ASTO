@@ -1,0 +1,110 @@
+<%@ Master Language="VB" CodeFile="MasterTrans.master.vb" Inherits="HRGA_MasterTrans" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" >
+<link rel="stylesheet" type="text/css" href="css/gaga2000.css">
+<link rel="stylesheet" type="text/css" href="css/niftyCor.css">
+<link rel="stylesheet" type="text/css" href="css/niftyPri.css" media="print">
+
+<SCRIPT type="text/javascript" src="css/prototyp.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="css/ubahgaga.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="css/kuki0000.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="css/nifty000.js"></SCRIPT>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+
+<head runat="server">
+    <title>Master Trans</title>
+     <script src="GridViewHelper.js" type="text/javascript"></script>
+</head>
+
+<body>
+ <form id="form1" runat="server">
+<div align="center">
+
+
+</div>
+
+	
+
+<table width="800" border="0" align="left" cellpadding="0" cellspacing="0">
+  <tr>
+    <td style="width: 123px; height: 24px">&nbsp;</td>
+    <td width="604" style="height: 24px; width: 780px; text-align: right;">&nbsp;<asp:LinkButton ID="Login" runat="server" BackColor="#FFE0C0" BorderColor="#C04000"
+            BorderStyle="None" BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"
+            OnClientClick="Logout" Style="text-decoration: none">.:: Login ::.</asp:LinkButton><asp:Label
+                ID="User" runat="server" BackColor="#FFE0C0" BorderColor="#C04000" BorderStyle="None"
+                BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"></asp:Label><asp:Label
+                    ID="Nama" runat="server" BackColor="#FFE0C0" BorderColor="#C04000" BorderStyle="None"
+                    BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"></asp:Label></td>
+  </tr>
+  <tr>
+    <td style="width: 123px; height: 362px" align="left" valign="top">&nbsp;<br />
+        <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows">
+            <ParentNodeStyle Font-Bold="False" />
+            <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+            <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                VerticalPadding="0px" />
+            <Nodes>
+                <asp:TreeNode Text="TRANSAKSI" Value="Transaksi">
+                    <asp:TreeNode NavigateUrl="Transaksi1.aspx" Text="Input Transaksi" Value="Input Transaksi"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="Transaksi2.aspx" Text="Deklarasi Surat Tugas" Value="Deklarasi Surat Tugas">
+                    </asp:TreeNode>
+                </asp:TreeNode>
+                <asp:TreeNode Text="REVIEW" Value="Report">
+                    <asp:TreeNode NavigateUrl="RekapDeklarasi.aspx" Text="Deklarasi" Value="Deklarasi">
+                    </asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="Titipan.aspx" Text="Transfer &amp; Potongan" Value="Transfer &amp; Potongan">
+                    </asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="~/HRGA/Trans/Transaksi3.aspx" Text="Semua Transaksi" Value="Semua Transaksi">
+                    </asp:TreeNode>
+                </asp:TreeNode>
+                <asp:TreeNode Text="REPORT" Value="Report">
+                    <asp:TreeNode Text="Rekap Deklarasi" Value="Rekap Deklarasi" NavigateUrl="Deklarasi1.aspx"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="DeklarasiObat.aspx" Text="Rekap Uang Pengobatan" Value="Rekap Uang Pengobatan">
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="Transfer &amp; Potongan" Value="Transfer &amp; Potongan" NavigateUrl="ReportTransferPotongan.aspx"></asp:TreeNode>
+                    <asp:TreeNode NavigateUrl="hisTrans.aspx" Text="History Transaksi Per Nrp" Value="History Transaksi Per Nrp">
+                    </asp:TreeNode>
+                </asp:TreeNode>
+            </Nodes>
+            <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+                NodeSpacing="0px" VerticalPadding="0px" />
+        </asp:TreeView>
+    </td>
+    <td width="604" valign="top" style="height: 362px">
+
+	<div id="latarhitam" style="margin: 0 auto; padding:0; background: #804000; width: 900px; height: 500px;">
+	<div style="margin: 0 auto; width: 98%; height: 98%;">
+
+<img src="/img/bening.gif" width="7" height="7" />&nbsp;
+	<table class="sistemkomen" >
+	<tr><td class="kotakkomenluar">
+	
+	
+
+<div class="tambahkomen">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+            </asp:contentplaceholder>
+    &nbsp;</div>
+	  
+	</td>
+	</tr>
+	</table>
+	<img src="/img/bening.gif" width="7" height="7" /><br />
+    </div>
+	</div>
+	</td>
+  </tr>
+</table>
+</form> 
+</body>
+<script type="text/javascript">
+
+    if(NiftyCheck()) {
+	    Rounded("div#latarhitam","all","#FF9900","#804000");
+    }
+	  GridViewHelper.Init(document.all.ctl00_ContentPlaceHolder1_GridView2, 100,0);  
+    
+</script>
+</html>

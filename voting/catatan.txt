@@ -1,0 +1,10 @@
+*Dalam belajar php disarankan menggunakan xampp.
+
+1. folder voting simpan di htdocs
+2. buat database dengan nama "ri32" tanpa tanda kutip, atau jika ingin menyesuaikan dengan database yang anda gunakan, silahkan ubah file "conn.php"
+3. import file "voting.sql.zip" dengan menggunakan phpmyadmin.
+4. buka browser dan jalankan program dengan mengetik :
+http://localhost/voting/voting.php
+
+
+semoga bermanfaat:)

@@ -1,0 +1,36 @@
+<script>		
+		var refreshId = setInterval(function()
+		{
+			$('#QLENG').fadeOut("slow").load('Chatting/QLoad/QLENG.php').fadeIn("slow");
+		}, 10000);
+		
+		var refreshId = setInterval(function()
+		{
+			$('#QLHRPGA').fadeOut("slow").load('Chatting/QLoad/QLHRPGA.php').fadeIn("slow");
+		}, 60000);
+		
+		var refreshId = setInterval(function()
+		{
+			$('#QLPLANT').fadeOut("slow").load('Chatting/QLoad/QLPLANT.php').fadeIn("slow");
+		}, 60000);
+		
+		var refreshId = setInterval(function()
+		{
+			$('#QLPROD').fadeOut("slow").load('Chatting/QLoad/QLPROD.php').fadeIn("slow");
+		}, 60000);
+		
+		var refreshId = setInterval(function()
+		{
+			$('#QLFAT').fadeOut("slow").load('Chatting/QLoad/QLFAT.php').fadeIn("slow");
+		}, 60000);
+		
+		var refreshId = setInterval(function()
+		{
+			$('#QLLOG').fadeOut("slow").load('Chatting/QLoad/QLLOG.php').fadeIn("slow");
+		}, 60000);
+		
+		var refreshId = setInterval(function()
+		{
+			$('#QLSHE').fadeOut("slow").load('Chatting/QLoad/QLSHE.php').fadeIn("slow");
+		}, 60000);
+		</script>

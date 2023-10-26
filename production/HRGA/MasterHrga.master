@@ -1,0 +1,1026 @@
+<%@ Master Language="VB" CodeFile="MasterHrga.master.vb" Inherits="MasterPage" %>
+
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>HRGA Online</title>
+    <script src="GridViewHelper.js" type="text/javascript"></script>
+    <link href="GridViewHelper.css" rel="STYLESHEET" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="border-right: #99ccff 1px solid;
+            border-top: #99ccff 1px solid; border-left: #99ccff 1px solid; width: 100%; border-bottom: #99ccff 1px solid;
+            height: 100%">
+            <tr>
+                <td style="background-color: #ccff99">
+
+                    <asp:Menu ID="Menu_Admin_Kpp" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <Items>
+					
+							<asp:MenuItem Text="MIKAD" Value="Form">
+                                <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/fDinasLS.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>                
+                            </asp:MenuItem>
+					
+                        <asp:MenuItem Text="KPP" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+							<asp:MenuItem NavigateUrl="Cuti/fCutiNonKpp.aspx" Target="_blank" Text="Form Cuti Non KPP" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinas.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+							<asp:MenuItem NavigateUrl="Cuti/fTugasEmergency.aspx" Target="_blank" Text="Form Tugas Ketika Cuti" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/trainsite.aspx" Target="_blank" Text="Form Training Site"
+                                    Value="Form Training Site"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Trans/default.aspx" Text="Form Transaksi" Value="Declarasi ST">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fKomplain.aspx" Target="_blank" Text="Form Solusi Pintar" Value="Form Solusi Pintar">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditRoster.aspx" Target="_blank" Text="Roster"
+                                    Value="Roster"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="View" Value="New Item">
+                            <asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstDinas.aspx" Text="Surat Dinas" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstTugas.aspx" Text="Surat Tugas" Value="Surat Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" Value="Surat Ijin"></asp:MenuItem>
+						    <asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Roster Per-NRP"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="Cuti/lstCutiNonKpp.aspx" Text="List Manifest Non Kpp" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstKomplain.aspx" Text="View Solusi Pintar" 
+                                Value="View Solusi Pintar"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="SKL/approveall.aspx" Text="Approve SKL per periode" Value="Approve SKL per periode"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Report" Value="New Item">
+                            <asp:MenuItem Text="Report Absensi" Value="Report Absensi">
+                                <asp:MenuItem NavigateUrl="Report/NotAbsensi.aspx" Target="_blank" Text="Not Absen"
+                                        Value="Not Absen"></asp:MenuItem>
+
+                                <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Target="_blank" Text="Absensi Periode"
+                                        Value="Absensi Dept"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Report Lembur" Value="Report Lembur">
+                                <asp:MenuItem Text="Rekap Lembur Periode" Value="Rekap Lembur Periode">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;rs:Command=Render" 
+                                        Text="Rekap Lembur Dept" Value="Rekap Lembur Dept"></asp:MenuItem>
+									<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                        Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+									<asp:MenuItem Text="Rekap Lembur Nrp" Value="Rekap Lembur Nrp" NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Nrp&amp;ViewMode=Detail"></asp:MenuItem>
+									<asp:MenuItem Text="Rekap Lembur Over Plan" Value="Rekap Lembur Nrp" 
+                                            NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fRekap_Lembur_Overplan_Departemen&amp;ViewMode=Detail"></asp:MenuItem>
+                                    <asp:MenuItem Text="Rekap Lembur + Poin Lembur" Value="Rekap Lembur + Poin Lembur" 
+                                            NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fRekap_Lembur_Poin_Lembur&amp;ViewMode=Detail"></asp:MenuItem>
+									<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRekap_Lembur_Bonus_Hari_Raya&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                            Value="Rekap Poin Lembur"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/?%2fHrga%2fMasterDetail_Rekap_Lembur_Bonus_Periode&amp;rs:Command=Render" Target="_blank"
+                                        Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur Closed" Value="Rekap Lembur Closed">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                        Value="Rekap Lembur"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_MasterDetail_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank"
+                                        Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/LemburBonusProd.aspx" Target="_blank" Text="Lembur Karyawan Produksi"
+                                        Value="Lembur Karyawan Produksi"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/Lembur.aspx" Target="_blank" Text="Lembur Karyawan Non Produksi"
+                                        Value="Lembur Karyawan Non Produksi"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Report Cuti"
+                                    Value="Report Cuti">
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                    Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/cutibelumselesai.aspx" Target="_blank" 
+                                    Text="Cuti Belum Selesai" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                    Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti" 
+                                    Target="_blank"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                    Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/Ijin.aspx" Target="_blank" Text="Ijin Karyawan"
+                                    Value="Ijin Karyawan"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                    Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/AttendRatio.aspx" Target="_blank" Text="Attendance Ratio"
+                                    Value="Attendance Ratio"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/mprofilea.aspx" Target="_blank" Text="Man Power Profile All Dept"
+                                    Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/mprofileb.aspx" Target="_blank" Text="Man Power Profile by Dept"
+                                    Value="Man Power Profile Semua by Dept"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="report/JamKerjaOpr.aspx" Target="_blank" Text="Jam Kerja Produksi &amp; Non Produksi"
+                                    Value="Jam Kerja Produksi &amp; Non Produksi"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fReport_PulangLebihDariJamNormal&amp;rs:Command=Render" 
+                                Target="_blank" Text="Karyawan Pulang lebih dari jam normal" 
+                                Value="Karyawan Pulang lebih dari jam normal"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_BKM&rs:Command=Render" Target="_balnk" Text="Report BKM" Value="Report BKM"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Manifest&rs:Command=Render" Target="_balnk" Text="Report Manifest" Value="Report Manifest"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_history_cuti&amp;rs:Command=Render" Text="Report History Cuti"
+                                        Value="Report History Cuti"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_cuti_karyawan&amp;rs:Command=Render" Text="Report Jumlah Cuti"
+                                        Value="Report Jumlah Cuti"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_tugas_per_periode&amp;rs:Command=Render" Text="Report Jumlah Karyawan Tugas Periode"
+                                        Value="Report Jumlah Karyawan Tugas Periode"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Tabel" Value="Tabel">
+                            <asp:MenuItem NavigateUrl="CalonKaryawan.aspx" Target="_blank" Text="Pelamar" Value="Pelamar">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="MasterKaryawanPama.aspx" Text="Karyawan" Value="Karyawan Pama">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="newndpos.aspx" Text="Secondary Posisi" Value="Secondary Posisi">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditHarike7.aspx" Target="_blank" Text="Hari ke 7" Value="Hari ke 7">
+                            </asp:MenuItem>
+							<asp:MenuItem NavigateUrl="EditIO.aspx" Text="Edit In-Out Absensi" Value="Edit In-Out Absensi">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditRoster.aspx" Text="Edit Roster" Value="Edit Roster">
+                            </asp:MenuItem>
+							
+                        </asp:MenuItem>
+						<asp:MenuItem Text="Upload" Value="Upload">
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RosterUploader" Target="_blank" Text="Upload Roster" Value="Upload Roster">
+							</asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RevisiAbsen" Target="_blank" Text="Upload Revisi Absen" Value="Upload Revisi Absen">
+							</asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/SklUploader" Target="_blank" Text="Upload SKL" Value="Upload SKL">
+							</asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+							</asp:MenuItem>
+                        </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+
+                    <asp:Menu ID="Menu_User_Kpp" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px" Visible="False">
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <Items>
+                            <asp:MenuItem Text="KPP" Value="Form">
+                                <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/trainsite.aspx" Target="_blank" Text="Form Training Site"
+                                    Value="Form Training Site"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="fIjin.aspx" Text="Form Ijin" Value="Form Ijin"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="EditHarike7.aspx" Target="_blank" Text="Hari ke7" Value="Hari ke7">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="View" Value="New Item">
+                                <asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem Text="Surat Dinas" Value="New Item" NavigateUrl="Cuti/lstDinas.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Surat Tugas" Value="Surat Tugas" NavigateUrl="Cuti/lstTugas.aspx">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" 
+                                    Value="Surat Ijin"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Edit Roster"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstKomplain.aspx" Text="View Solusi Pintar" 
+                                    Value="View Solusi Pintar"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HRGA/SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Report" Value="New Item">
+                                <asp:MenuItem Text="Report Cuti" Value="Report Cuti">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                        Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/HRGA/Cuti/cutibelumselesai.aspx" 
+                                        Text="Cuti Belum Selesai" Value="Cuti Belum Selesai"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                        Target="_blank" Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                        Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                    Value="New Item"></asp:MenuItem>
+				                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;rs:Command=Render" 
+                                    Text="Rekap Lembur Dept" Value="Rekap Lembur Dept"></asp:MenuItem>
+				                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Nrp_Hari_Raya&rs:Command=Render" Text="Rekap Lembur NRP" Value="Rekap Lembur" Target="_blank">
+                                </asp:MenuItem>
+								<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                        Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Text="Absensi Periode" Value="Absensi Dept" Target="_blank">
+                                 </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HRGA/Report/AbsensiPeriodeMasingDept.aspx" 
+                                    Text="Absensi Masing-masing Dept" Value="Absensi Masing-masing Dept">
+                                </asp:MenuItem>
+								<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Manifest&rs:Command=Render" Target="_balnk" Text="Report Manifest" Value="Report Manifest"></asp:MenuItem>
+                            </asp:MenuItem>
+							
+								<asp:MenuItem Text="Upload" Value="Upload">
+								<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+								</asp:MenuItem>
+							</asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                    </asp:Menu>
+                    
+                    <asp:Menu ID="Menu_Admin_Mikad" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <Items>  
+
+                        <asp:MenuItem Text="MIKAD" Value="Form">
+                                <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/fDinasLS.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>                
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="KPP" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinas.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/trainsite.aspx" Target="_blank" Text="Form Training Site"
+                                    Value="Form Training Site"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Trans/default.aspx" Text="Form Transaksi" Value="Declarasi ST">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fKomplain.aspx" Target="_blank" Text="Form Solusi Pintar" Value="Form Solusi Pintar">
+                            </asp:MenuItem>
+                 
+                        </asp:MenuItem>
+					    <asp:MenuItem Text="View" Value="New Item">
+						
+						<asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstDinas.aspx" Text="Surat Dinas" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstTugas.aspx" Text="Surat Tugas" Value="Surat Tugas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" Value="Surat Ijin"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Edit Roster"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstKomplain.aspx" Text="View Solusi Pintar" 
+                                    Value="View Solusi Pintar"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstCutiPerNrp.aspx" Text="Cuti-Dinas-Tugas/Nrp" Value="Cuti-Dinas-Tugas/Nrp">
+                                </asp:MenuItem>				
+                            </asp:MenuItem>
+													
+							<asp:MenuItem Text="Tabel" Value="Tabel">			
+							 <asp:MenuItem NavigateUrl="MasterKaryawanPama.aspx" Text="Karyawan" Value="Karyawan Pama">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="newndpos.aspx" Text="Secondary Posisi" Value="Secondary Posisi">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="EditHarike7.aspx" Target="_blank" Text="Hari ke 7" Value="Hari ke 7">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="MasterHariLibur.aspx" Target="_blank" Text="Hari Libur"
+                                    Value="Hari Libur"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="EditRoster.aspx" Text="Edit Roster" Value="Edit Roster">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HRGA/Edit_Roster_Per_Dept.aspx" Text="Edit Roster Dept" Value="Edit Roster Dept"></asp:MenuItem>          
+                            </asp:MenuItem>
+							
+								<asp:MenuItem Text="Report" Value="New Item">
+                                <asp:MenuItem Text="Report Absensi" Value="Report Absensi">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fAbsensi_Departemen_Tanggal_Is_In&amp;rs:Command=Render" Text="Absensi Di Awal Shift (Hadir)"
+                                        Value="Absensi Di Awal Shift (Hadir)"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fAbsensi_Departemen_Tanggal_Not_In&amp;rs:Command=Render" 
+                                        Target="_blank" Text="Absensi Di Awal Shift (Tidak Hadir)" 
+                                        Value="Absensi Di Awal Shift"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Target="_blank" Text="Absensi Periode"
+                                        Value="Absensi Dept"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fAttendance_Ratio&amp;ViewMode=Detail" 
+                                        Text="Attendance Ratio" Value="Attendance Ratio"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Report Lembur" Value="Report Lembur">
+                                    <asp:MenuItem Text="Rekap Lembur Periode" Value="Rekap Lembur Periode">
+                                        <asp:MenuItem Text="Rekap Lembur Dept" Value="Rekap Lembur Dept" 
+                                            NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;ViewMode=Detail"></asp:MenuItem>
+										<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                        Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+                                        <asp:MenuItem Text="Rekap Lembur Nrp" Value="Rekap Lembur Nrp" 
+                                            NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Nrp&amp;ViewMode=Detail"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Rekap Lembur Closed" Value="Rekap Lembur Closed">
+                                        <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                            Value="Rekap Lembur"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_MasterDetail_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank"
+                                            Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/LemburBonusProd.aspx" Target="_blank" Text="Lembur Karyawan Produksi"
+                                        Value="Lembur Karyawan Produksi"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/Lembur.aspx" Target="_blank" Text="Lembur Karyawan Non Produksi"
+                                        Value="Lembur Karyawan Non Produksi"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Report Cuti"
+                                    Value="Report Cuti">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                        Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Cuti/cutibelumselesai.aspx" Target="_blank" 
+                                        Text="Cuti Belum Selesai" Value="New Item"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                        Target="_blank" Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                        Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/Ijin.aspx" Target="_blank" Text="Ijin Karyawan"
+                                    Value="Ijin Karyawan"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                    Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/AttendRatio.aspx" Target="_blank" Text="Attendance Ratio"
+                                    Value="Attendance Ratio"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/mprofilea.aspx" Target="_blank" Text="Man Power Profile All Dept"
+                                    Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/mprofileb.aspx" Target="_blank" Text="Man Power Profile by Dept"
+                                    Value="Man Power Profile Semua by Dept"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="report/JamKerjaOpr.aspx" Target="_blank" Text="Jam Kerja Produksi &amp; Non Produksi"
+                                    Value="Jam Kerja Produksi &amp; Non Produksi"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fReport_PulangLebihDariJamNormal&amp;rs:Command=Render" 
+                                    Target="_balnk" Text="Karyawan Pulang lebih dari jam normal" 
+                                    Value="Karyawan Pulang lebih dari jam normal"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_BKM&rs:Command=Render" Target="_balnk" Text="Report BKM" Value="Report BKM"></asp:MenuItem>
+								 <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Manifest&rs:Command=Render" 
+                                    Target="_balnk" Text="Report Manifest" 
+                                    Value="Report Manifest"></asp:MenuItem>
+							    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Tiket&rs:Command=Render" 
+                                    Target="_balnk" Text="Report Tiket" 
+                                    Value="Report Tiket"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Packmeal&rs:Command=Render" 
+                                    Target="_balnk" Text="Report Packmeal Harian" 
+                                    Value="Report Tiket"></asp:MenuItem>
+								
+                            </asp:MenuItem>	
+							
+							<asp:MenuItem Text="Upload" Value="Upload">
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+							</asp:MenuItem>
+                        </asp:MenuItem>
+				
+					   </Items>
+                    </asp:Menu>
+
+                    <asp:Menu ID="Menu_User_Mikad" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <Items>
+
+                            <asp:MenuItem Text="MIKAD" Value="Form">
+                                <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/fDinasLS.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>                
+                            </asp:MenuItem>
+                           
+                            <asp:MenuItem Text="View" Value="New Item">
+                                <asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstDinas.aspx" Text="Surat Dinas" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstTugas.aspx" Text="Surat Tugas" Value="Surat Tugas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" Value="Surat Ijin"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Edit Roster"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="Cuti/lstKomplain.aspx" Text="View Solusi Pintar" 
+                                    Value="View Solusi Pintar"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/lstCutiPerNrp.aspx" Text="Cuti-Dinas-Tugas/Nrp" Value="Cuti-Dinas-Tugas/Nrp">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Report" Value="New Item">
+                                <asp:MenuItem Text="Report Absensi" Value="Report Absensi">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fAbsensi_Departemen_Tanggal_Is_In&amp;rs:Command=Render" Text="Absensi Di Awal Shift (Hadir)"
+                                        Value="Absensi Di Awal Shift (Hadir)"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fAbsensi_Departemen_Tanggal_Not_In&amp;rs:Command=Render" 
+                                        Target="_blank" Text="Absensi Di Awal Shift (Tidak Hadir)" 
+                                        Value="Absensi Di Awal Shift"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Target="_blank" Text="Absensi Periode"
+                                        Value="Absensi Dept"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fAttendance_Ratio&amp;ViewMode=Detail" 
+                                        Text="Attendance Ratio" Value="Attendance Ratio"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Report Lembur" Value="Report Lembur">
+                                    <asp:MenuItem Text="Rekap Lembur Periode" Value="Rekap Lembur Periode">
+                                        <asp:MenuItem Text="Rekap Lembur Dept" Value="Rekap Lembur Dept" 
+                                            NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;rs:Command=Render" 
+                                            Target="_blank"></asp:MenuItem>
+										<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                        Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRekap_Lembur_Bonus_Hari_Raya&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                            Value="Rekap Lembur"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/?%2fHrga%2fMasterDetail_Rekap_Lembur_Bonus_Periode&amp;rs:Command=Render" Target="_blank"
+                                            Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Rekap Lembur Closed" Value="Rekap Lembur Closed">
+                                        <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                            Value="Rekap Lembur"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_MasterDetail_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank"
+                                            Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/LemburBonusProd.aspx" Target="_blank" Text="Lembur Karyawan Produksi"
+                                        Value="Lembur Karyawan Produksi"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/Lembur.aspx" Target="_blank" Text="Lembur Karyawan Non Produksi"
+                                        Value="Lembur Karyawan Non Produksi"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Report Cuti"
+                                    Value="Report Cuti">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                        Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Cuti/cutibelumselesai.aspx" Target="_blank" 
+                                        Text="Cuti Belum Selesai" Value="New Item"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                        Target="_blank" Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                        Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/Ijin.aspx" Target="_blank" Text="Ijin Karyawan"
+                                    Value="Ijin Karyawan"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                    Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/AttendRatio.aspx" Target="_blank" Text="Attendance Ratio"
+                                    Value="Attendance Ratio"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/mprofilea.aspx" Target="_blank" Text="Man Power Profile All Dept"
+                                    Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/mprofileb.aspx" Target="_blank" Text="Man Power Profile by Dept"
+                                    Value="Man Power Profile Semua by Dept"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="report/JamKerjaOpr.aspx" Target="_blank" Text="Jam Kerja Produksi &amp; Non Produksi"
+                                    Value="Jam Kerja Produksi &amp; Non Produksi"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fReport_PulangLebihDariJamNormal&amp;rs:Command=Render" 
+                                    Target="_blank" Text="Karyawan Pulang lebih dari jam normal" 
+                                    Value="Karyawan Pulang lebih dari jam normal"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HRGA/Report/AbsensiPeriodeMasingDept.aspx" 
+                                    Text="New Item" Value="New Item"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Manifest&rs:Command=Render" 
+                                    Target="_balnk" Text="Report Manifest" 
+                                    Value="Report Manifest"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Tiket&rs:Command=Render" 
+                                    Target="_balnk" Text="Report Tiket" 
+                                    Value="Report Tiket"></asp:MenuItem>
+                            </asp:MenuItem>                         
+                            <asp:MenuItem Text="Tabel" Value="Tabel">
+                                <asp:MenuItem NavigateUrl="EditHarike7.aspx" Target="_blank" Text="Hari ke 7" Value="Hari ke 7">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+							<asp:MenuItem Text="Upload" Value="Upload">
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RosterUploader" Target="_blank" Text="Upload Roster" Value="Upload Roster">
+							</asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RevisiAbsen" Target="_blank" Text="Upload Revisi Absen" Value="Upload Revisi Absen">
+							</asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/SklUploader" Target="_blank" Text="Upload SKL" Value="Upload SKL">
+							</asp:MenuItem>
+							<asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+							</asp:MenuItem>
+                        </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+
+                    <asp:Menu ID="Menu_HCGS" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <Items>
+                
+                        <asp:MenuItem Text="MIKAD" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinasLS.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                Value="Form SKL Harike7"></asp:MenuItem>                
+                        </asp:MenuItem>
+                
+                        <asp:MenuItem Text="KPP" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fCutiNonKpp.aspx" Target="_blank" Text="Form Cuti Non KPP" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinas.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugasEmergency.aspx" Target="_blank" Text="Form Tugas Ketika Cuti" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/trainsite.aspx" Target="_blank" Text="Form Training Site"
+                                    Value="Form Training Site"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Trans/default.aspx" Text="Form Transaksi" Value="Declarasi ST">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fKomplain.aspx" Target="_blank" Text="Form Solusi Pintar" Value="Form Solusi Pintar">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti22.aspx" Target="_blank" Text="Cuti Emergency"
+                                    Value="Cuti Emergency"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditRoster.aspx" Target="_blank" Text="Roster"
+                                    Value="Roster"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="View" Value="New Item">
+                            <asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstDinas.aspx" Text="Surat Dinas" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstTugas.aspx" Text="Surat Tugas" Value="Surat Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" Value="Surat Ijin"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Roster Per-NRP"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstCutiNonKpp.aspx" Text="List Manifest Non Kpp" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstKomplain.aspx" Text="View Solusi Pintar" 
+                                Value="View Solusi Pintar"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/approveall.aspx" Text="Approve SKL per periode" Value="Approve SKL per periode"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Report" Value="New Item">
+                            <asp:MenuItem Text="Report Absensi" Value="Report Absensi">
+                                <asp:MenuItem NavigateUrl="Report/NotAbsensi.aspx" Target="_blank" Text="Not Absen"
+                                        Value="Not Absen"></asp:MenuItem>
+
+                                <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Target="_blank" Text="Absensi Periode"
+                                        Value="Absensi Dept"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Report Lembur" Value="Report Lembur">
+                            <asp:MenuItem Text="Rekap Lembur Periode" Value="Rekap Lembur Periode">
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;rs:Command=Render" 
+                                    Text="Rekap Lembur Dept" Value="Rekap Lembur Dept"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                    Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur Nrp" Value="Rekap Lembur Nrp" NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Nrp&amp;ViewMode=Detail"></asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur Over Plan" Value="Rekap Lembur Nrp" 
+                                        NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fRekap_Lembur_Overplan_Departemen&amp;ViewMode=Detail"></asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur + Poin Lembur" Value="Rekap Lembur + Poin Lembur" 
+                                        NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fRekap_Lembur_Poin_Lembur&amp;ViewMode=Detail"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRekap_Lembur_Bonus_Hari_Raya&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                        Value="Rekap Poin Lembur"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/?%2fHrga%2fMasterDetail_Rekap_Lembur_Bonus_Periode&amp;rs:Command=Render" Target="_blank"
+                                    Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Rekap Lembur Closed" Value="Rekap Lembur Closed">
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                Value="Rekap Lembur"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_MasterDetail_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank"
+                                Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/LemburBonusProd.aspx" Target="_blank" Text="Lembur Karyawan Produksi"
+                                Value="Lembur Karyawan Produksi"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/Lembur.aspx" Target="_blank" Text="Lembur Karyawan Non Produksi"
+                                Value="Lembur Karyawan Non Produksi"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Report Cuti"
+                                Value="Report Cuti">
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/cutibelumselesai.aspx" Target="_blank" 
+                                Text="Cuti Belum Selesai" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti" 
+                                Target="_blank"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/Ijin.aspx" Target="_blank" Text="Ijin Karyawan"
+                                Value="Ijin Karyawan"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                Value="New Item"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/AttendRatio.aspx" Target="_blank" Text="Attendance Ratio"
+                                Value="Attendance Ratio"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/mprofilea.aspx" Target="_blank" Text="Man Power Profile All Dept"
+                                Value="New Item"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/mprofileb.aspx" Target="_blank" Text="Man Power Profile by Dept"
+                                Value="Man Power Profile Semua by Dept"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="report/JamKerjaOpr.aspx" Target="_blank" Text="Jam Kerja Produksi &amp; Non Produksi"
+                                Value="Jam Kerja Produksi &amp; Non Produksi"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fReport_PulangLebihDariJamNormal&amp;rs:Command=Render" 
+                            Target="_blank" Text="Karyawan Pulang lebih dari jam normal" 
+                            Value="Karyawan Pulang lebih dari jam normal"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_BKM&rs:Command=Render" Target="_balnk" Text="Report BKM" Value="Report BKM"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Manifest&rs:Command=Render" Target="_balnk" Text="Report Manifest" Value="Report Manifest"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_history_cuti&amp;rs:Command=Render" Text="Report History Cuti"
+                                    Value="Report History Cuti"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_cuti_karyawan&amp;rs:Command=Render" Text="Report Jumlah Cuti"
+                                    Value="Report Jumlah Cuti"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_tugas_per_periode&amp;rs:Command=Render" Text="Report Jumlah Karyawan Tugas Periode"
+                                    Value="Report Jumlah Karyawan Tugas Periode"></asp:MenuItem>
+						<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_ijin_per_periode&amp;rs:Command=Render" Text="Report Jumlah Ijin Per Periode"
+                                    Value="Report Jumlah Ijin Per Periode"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Packmeal&amp;rs:Command=Render" Text="Report Daily Packmeal"
+                                    Value="Report Daily Packmeal"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Tabel" Value="Tabel">
+                            <asp:MenuItem NavigateUrl="CalonKaryawan.aspx" Target="_blank" Text="Pelamar" Value="Pelamar">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="MasterKaryawanPama.aspx" Text="Karyawan" Value="Karyawan Pama">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="newndpos.aspx" Text="Secondary Posisi" Value="Secondary Posisi">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditHarike7.aspx" Target="_blank" Text="Hari ke 7" Value="Hari ke 7">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditIO.aspx" Text="Edit In-Out Absensi" Value="Edit In-Out Absensi">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditRoster.aspx" Text="Edit Roster" Value="Edit Roster">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Upload" Value="Upload">
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RosterUploader" Target="_blank" Text="Upload Roster" Value="Upload Roster">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RevisiAbsen" Target="_blank" Text="Upload Revisi Absen" Value="Upload Revisi Absen">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/SklUploader" Target="_blank" Text="Upload SKL" Value="Upload SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+
+                     <asp:Menu ID="Menu_Payroll" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <Items>
+                
+                        <asp:MenuItem Text="MIKAD" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinasLS.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                Value="Form SKL Harike7"></asp:MenuItem>                
+                        </asp:MenuItem>
+                
+                        <asp:MenuItem Text="KPP" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fCutiNonKpp.aspx" Target="_blank" Text="Form Cuti Non KPP" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinas.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugasEmergency.aspx" Target="_blank" Text="Form Tugas Ketika Cuti" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                    Value="Form SKL Harike7"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/trainsite.aspx" Target="_blank" Text="Form Training Site"
+                                    Value="Form Training Site"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Trans/default.aspx" Text="Form Transaksi" Value="Declarasi ST">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fKomplain.aspx" Target="_blank" Text="Form Solusi Pintar" Value="Form Solusi Pintar">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti22.aspx" Target="_blank" Text="Cuti Emergency"
+                                    Value="Cuti Emergency"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditRoster.aspx" Target="_blank" Text="Roster"
+                                    Value="Roster"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="View" Value="New Item">
+                            <asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstDinas.aspx" Text="Surat Dinas" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstTugas.aspx" Text="Surat Tugas" Value="Surat Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" Value="Surat Ijin"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Roster Per-NRP"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstCutiNonKpp.aspx" Text="List Manifest Non Kpp" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstKomplain.aspx" Text="View Solusi Pintar" 
+                                Value="View Solusi Pintar"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/approveall.aspx" Text="Approve SKL per periode" Value="Approve SKL per periode"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Report" Value="New Item">
+                            <asp:MenuItem Text="Report Absensi" Value="Report Absensi">
+                                <asp:MenuItem NavigateUrl="Report/NotAbsensi.aspx" Target="_blank" Text="Not Absen"
+                                        Value="Not Absen"></asp:MenuItem>
+
+                                <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Target="_blank" Text="Absensi Periode"
+                                        Value="Absensi Dept"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Report Lembur" Value="Report Lembur">
+                            <asp:MenuItem Text="Rekap Lembur Periode" Value="Rekap Lembur Periode">
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;rs:Command=Render" 
+                                    Text="Rekap Lembur Dept" Value="Rekap Lembur Dept"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                    Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur Nrp" Value="Rekap Lembur Nrp" NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Nrp&amp;ViewMode=Detail"></asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur Over Plan" Value="Rekap Lembur Nrp" 
+                                        NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fRekap_Lembur_Overplan_Departemen&amp;ViewMode=Detail"></asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur + Poin Lembur" Value="Rekap Lembur + Poin Lembur" 
+                                        NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fRekap_Lembur_Poin_Lembur&amp;ViewMode=Detail"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRekap_Lembur_Bonus_Hari_Raya&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                        Value="Rekap Poin Lembur"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/?%2fHrga%2fMasterDetail_Rekap_Lembur_Bonus_Periode&amp;rs:Command=Render" Target="_blank"
+                                    Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Rekap Lembur Closed" Value="Rekap Lembur Closed">
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                Value="Rekap Lembur"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_MasterDetail_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank"
+                                Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/LemburBonusProd.aspx" Target="_blank" Text="Lembur Karyawan Produksi"
+                                Value="Lembur Karyawan Produksi"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/Lembur.aspx" Target="_blank" Text="Lembur Karyawan Non Produksi"
+                                Value="Lembur Karyawan Non Produksi"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Report Cuti"
+                                Value="Report Cuti">
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/cutibelumselesai.aspx" Target="_blank" 
+                                Text="Cuti Belum Selesai" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti" 
+                                Target="_blank"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/Ijin.aspx" Target="_blank" Text="Ijin Karyawan"
+                                Value="Ijin Karyawan"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                Value="New Item"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/AttendRatio.aspx" Target="_blank" Text="Attendance Ratio"
+                                Value="Attendance Ratio"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/mprofilea.aspx" Target="_blank" Text="Man Power Profile All Dept"
+                                Value="New Item"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="Report/mprofileb.aspx" Target="_blank" Text="Man Power Profile by Dept"
+                                Value="Man Power Profile Semua by Dept"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="report/JamKerjaOpr.aspx" Target="_blank" Text="Jam Kerja Produksi &amp; Non Produksi"
+                                Value="Jam Kerja Produksi &amp; Non Produksi"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fReport_PulangLebihDariJamNormal&amp;rs:Command=Render" 
+                            Target="_blank" Text="Karyawan Pulang lebih dari jam normal" 
+                            Value="Karyawan Pulang lebih dari jam normal"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_BKM&rs:Command=Render" Target="_balnk" Text="Report BKM NRP" Value="Report BKM NRP"></asp:MenuItem>
+						<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_BKM_dept&rs:Command=Render" Target="_balnk" Text="Report BKM Departemen" Value="Report BKM Departemen"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Manifest&rs:Command=Render" Target="_balnk" Text="Report Manifest" Value="Report Manifest"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_history_cuti&amp;rs:Command=Render" Text="Report History Cuti"
+                                    Value="Report History Cuti"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_cuti_karyawan&amp;rs:Command=Render" Text="Report Jumlah Cuti"
+                                    Value="Report Jumlah Cuti"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_tugas_per_periode&amp;rs:Command=Render" Text="Report Jumlah Karyawan Tugas Periode"
+                                    Value="Report Jumlah Karyawan Tugas Periode"></asp:MenuItem>
+						<asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_ijin_per_periode&amp;rs:Command=Render" Text="Report Jumlah Ijin Per Periode"
+                                    Value="Report Jumlah Ijin Per Periode"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_Packmeal&amp;rs:Command=Render" Text="Report Daily Packmeal"
+                                    Value="Report Daily Packmeal"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2frpt_data_karyawan&amp;rs:Command=Render" Text="Report Data Karyawan"
+                                    Value="Report Data Karyawan"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Tabel" Value="Tabel">
+                            <asp:MenuItem NavigateUrl="CalonKaryawan.aspx" Target="_blank" Text="Pelamar" Value="Pelamar">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="MasterKaryawanPama.aspx" Text="Karyawan" Value="Karyawan Pama">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="newndpos.aspx" Text="Secondary Posisi" Value="Secondary Posisi">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditHarike7.aspx" Target="_blank" Text="Hari ke 7" Value="Hari ke 7">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditIO.aspx" Text="Edit In-Out Absensi" Value="Edit In-Out Absensi">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="EditRoster.aspx" Text="Edit Roster" Value="Edit Roster">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Upload" Value="Upload">
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RosterUploader" Target="_blank" Text="Upload Roster" Value="Upload Roster">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/RevisiAbsen" Target="_blank" Text="Upload Revisi Absen" Value="Upload Revisi Absen">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/SklUploader" Target="_blank" Text="Upload SKL" Value="Upload SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+
+                    <asp:Menu ID="Menu_Korlap" runat="server" BackColor="#CCFF99" DynamicHorizontalOffset="2"
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" Orientation="Horizontal"
+                        StaticSubMenuIndent="10px">
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <Items>  
+
+                         <asp:MenuItem Text="MIKAD" Value="Form">
+                            <asp:MenuItem NavigateUrl="Cuti/fCuti1LS.aspx" Target="_blank" Text="Form Cuti" Value="Form Cuti">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fDinasLS.aspx" Target="_blank" Text="Form Dinas" Value="Form Dinas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/fTugas.aspx" Target="_blank" Text="Form Tugas" Value="Form Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="fIjin.aspx" Target="_blank" Text="Form Ijin" Value="Form Ijin">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/skael_ha.aspx" Target="_Blank" Text="Form SKL" Value="Form SKL">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/harike7.aspx" Target="_Blank" Text="Form SKL Harike7"
+                                Value="Form SKL Harike7"></asp:MenuItem>                
+                        </asp:MenuItem>
+
+                       <asp:MenuItem Text="View" Value="New Item">
+                            <asp:MenuItem NavigateUrl="Cuti/lstCuti.aspx" Text="Surat Cuti" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstDinas.aspx" Text="Surat Dinas" Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstTugas.aspx" Text="Surat Tugas" Value="Surat Tugas">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstIjin.aspx" Text="Surat Ijin" Value="Surat Ijin"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="RosterNrp.aspx" Text="Roster Per-NRP" Value="Edit Roster"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="SKL/listskl1.aspx" Text="SKL" Value="SKL"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/lstCutiPerNrp.aspx" Text="Cuti-Dinas-Tugas/Nrp" Value="Cuti-Dinas-Tugas/Nrp">
+                            </asp:MenuItem>				
+                        </asp:MenuItem>
+                                                
+                        <asp:MenuItem Text="Tabel" Value="Tabel">			
+                            <asp:MenuItem NavigateUrl="MasterKaryawanLS.aspx" Text="Karyawan" Value="Karyawan Pama"></asp:MenuItem>
+                        </asp:MenuItem>
+                        
+                            <asp:MenuItem Text="Report" Value="Report">
+                                <asp:MenuItem Text="Report Absensi" Value="Report Absensi">
+                                <asp:MenuItem NavigateUrl="Report/AbsensiPeriodeDept.aspx" Target="_blank" Text="Absensi Periode"
+                                    Value="Absensi Dept"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Report Lembur" Value="Report Lembur">
+                                <asp:MenuItem Text="Rekap Lembur Periode" Value="Rekap Lembur Periode">
+                                    <asp:MenuItem Text="Rekap Lembur Dept" Value="Rekap Lembur Dept" 
+                                        NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Dept&amp;ViewMode=Detail"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fLembur_Per_Periode_Per_Dept_Hari_Raya&amp;rs:Command=Render" 
+                                    Text="Rekap Lembur Dept Hari Raya" Value="Rekap Lembur Dept Hari Raya"></asp:MenuItem>
+                                    <asp:MenuItem Text="Rekap Lembur Nrp" Value="Rekap Lembur Nrp" 
+                                        NavigateUrl="http://10.13.130.55/Reports/Pages/Report.aspx?ItemPath=%2fHrga%2fLembur_Per_Periode_Per_Nrp&amp;ViewMode=Detail"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Rekap Lembur Closed" Value="Rekap Lembur Closed">
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank" Text="Rekap Lembur"
+                                        Value="Rekap Lembur"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fClosing_MasterDetail_Rekap_Lembur_Bonus_Perbulan&amp;rs:Command=Render" Target="_blank"
+                                        Text="Master Detail" Value="Master Detail"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/LemburBonusProd.aspx" Target="_blank" Text="Lembur Karyawan Produksi"
+                                    Value="Lembur Karyawan Produksi"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/Lembur.aspx" Target="_blank" Text="Lembur Karyawan Non Produksi"
+                                    Value="Lembur Karyawan Non Produksi"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Report Cuti"
+                                Value="Report Cuti">
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fSC_ST_Check&rs:Command=Render" Target="_blank" 
+                                    Text="Cuti By Tanggal" Value="Cuti By Tanggal"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Cuti/cutibelumselesai.aspx" Target="_blank" 
+                                    Text="Cuti Belum Selesai" Value="New Item"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://10.13.130.55/reportserver?%2fHrga%2fShutleBus_Cuti&amp;rs:Command=Render" 
+                                    Target="_blank" Text="Akan &amp; Datang Cuti" Value="Akan &amp; Datang Cuti">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="Report/HistoryCutiDept.aspx" Target="_blank" 
+                                    Text="History Cuti by Dept" Value="History Cuti by Dept"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/Ijin.aspx" Target="_blank" Text="Ijin Karyawan"
+                                Value="Ijin Karyawan"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Cuti/DinasAkanSelesai.aspx" Target="_blank" Text="Dinas Akan Berakhir"
+                                Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/AttendRatio.aspx" Target="_blank" Text="Attendance Ratio"
+                                Value="Attendance Ratio"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/mprofilea.aspx" Target="_blank" Text="Man Power Profile All Dept"
+                                Value="New Item"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Report/mprofileb.aspx" Target="_blank" Text="Man Power Profile by Dept"
+                                Value="Man Power Profile Semua by Dept"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="report/JamKerjaOpr.aspx" Target="_blank" Text="Jam Kerja Produksi &amp; Non Produksi"
+                                Value="Jam Kerja Produksi &amp; Non Produksi"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/Reportserver?%2fHrga%2fReport_PulangLebihDariJamNormal&amp;rs:Command=Render" 
+                                Target="_balnk" Text="Karyawan Pulang lebih dari jam normal" 
+                                Value="Karyawan Pulang lebih dari jam normal"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="http://10.13.130.55/ReportServer/Pages/ReportViewer.aspx?%2fHrga%2fRpt_BKM&rs:Command=Render" Target="_balnk" Text="Report BKM" Value="Report BKM"></asp:MenuItem>                         
+                        </asp:MenuItem>	
+                        
+                        <asp:MenuItem Text="Upload" Value="Upload">
+                        <asp:MenuItem NavigateUrl="http://pabbapco401.kppmining.net:9001/DownloadTemplate" Target="_blank" Text="Download Template" Value="Download Template">
+                        </asp:MenuItem>
+                        </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                         
+                </td>
+
+                <td align="right" style="background-color: #ccff99">
+                    <asp:LinkButton ID="Login" runat="server" BackColor="#FFE0C0" BorderColor="#C04000"
+                        BorderStyle="None" BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"
+                        OnClientClick="Logout" Style="text-decoration: none" EnableTheming="True" Visible="False">.:: Login ::.</asp:LinkButton><asp:Label
+                            ID="User" runat="server" BackColor="#FFE0C0" BorderColor="#C04000" BorderStyle="None"
+                            BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"></asp:Label><asp:Label
+                                ID="Nama" runat="server" BackColor="#FFE0C0" BorderColor="#C04000" BorderStyle="None"
+                                BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"></asp:Label></td>
+            </tr>
+            <tr>
+                <td valign="top" colspan="2">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 100%">
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+        <script language="javascript" type="text/javascript">
+	</script>
+</body>
+</html>

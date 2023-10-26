@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.49999cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.25cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.53967cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.75001cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.53332cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Subreport Name="subreport1">
+                      <ReportName>Detail_ Lembur_Per_Periode_Per_Nrp</ReportName>
+                      <Parameters>
+                        <Parameter Name="Awal">
+                          <Value>=Parameters!a.Value</Value>
+                        </Parameter>
+                        <Parameter Name="Akhir">
+                          <Value>=Parameters!b.Value</Value>
+                        </Parameter>
+                        <Parameter Name="Nrp">
+                          <Value>=Fields!Nrp.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Subreport>
+                    <ColSpan>8</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <PageBreak>
+                  <BreakLocation>StartAndEnd</BreakLocation>
+                </PageBreak>
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSource2</DataSetName>
+        <Height>0.53332cm</Height>
+        <Width>20.03967cm</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>0.20997in</Height>
+    <Style />
+  </Body>
+  <Width>7.88963in</Width>
+  <Page>
+    <PageWidth>9.5in</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.59055in</LeftMargin>
+    <RightMargin>0.3937in</RightMargin>
+    <TopMargin>0.98425in</TopMargin>
+    <BottomMargin>0.98425in</BottomMargin>
+    <ColumnSpacing>0.3937in</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource2">
+      <DataSourceReference>DS_ABS</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>bec78f95-b347-4031-8fdb-a508b3dc43e1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSource2">
+      <Query>
+        <DataSourceName>DataSource2</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Departemen">
+            <Value>=Parameters!Departemen.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@a">
+            <Value>=Parameters!a.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@b">
+            <Value>=Parameters!b.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Gol">
+            <Value>=Parameters!Gol.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@NRP">
+            <Value>=Parameters!NRP.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT     nrp, NAMA, Dept, Golongan, SUM(Lembur) AS Lembur, SUM(MalamHari) AS MalamHari, SUM(SiangHari) AS SiangHari, SUM(TotalHari) AS TotalHari
+FROM         (SELECT     A.nrp, A.NAMA, A.OprNonOpr, A.Dept, A.Bulan, A.tanggal, '15/' + CONVERT(Varchar, CAST(SUBSTRING(A.Bulan, 1, 2) AS Integer) - 1) 
+                                              + '/' + SUBSTRING(A.Bulan, 4, 4) AS Awal, '16/' + SUBSTRING(A.Bulan, 1, 2) + '/' + SUBSTRING(A.Bulan, 4, 4) AS Akhir, ((((((A.Ke1 * 1.5 + A.Ke2 * 2) 
+                                              + A.Ke17 * 2) + A.Ke8 * 3) + A.Ke9dst * 4) + A.L17 * 3) + A.L8 * 4) + A.L9dst * 5 AS Lembur, B.JkpXFaXFatalXFspXFpXFe AS Bonus, A.MalamHari, A.SiangHari, 
+                                              A.MalamHari + A.SiangHari AS TotalHari, A.Golongan
+                       FROM          dbo.VW_Rekap_Lembur_tgl AS A LEFT OUTER JOIN
+                                              dbo.vw_Rekap_Bonus_a AS B ON A.nrp = B.Nrp AND A.Bulan = B.Bulan AND A.Bulan = B.Fpi_Bulan
+                       WHERE      (A.Dept IN (@Departemen)) AND (A.tanggal BETWEEN @a AND @b)) AS TBL
+Where Golongan BETWEEN (CASE When @Gol='19-UP' THEN 19 ELSE 0 END) AND (CASE WHEN @Gol='19-UP' THEN 28 ELSE 18 END)AND NRP IN (@NRP)
+GROUP BY nrp, NAMA, Dept, Golongan</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Nrp">
+          <DataField>nrp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nama">
+          <DataField>NAMA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Dept">
+          <DataField>Dept</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Golongan">
+          <DataField>Golongan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Lembur">
+          <DataField>Lembur</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MalamHari">
+          <DataField>MalamHari</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SiangHari">
+          <DataField>SiangHari</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalHari">
+          <DataField>TotalHari</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataDepartemen">
+      <Query>
+        <DataSourceName>DataSource2</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Company">
+            <Value>=Parameters!Company.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DeptID">
+            <Value>=Parameters!DeptID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>Select DISTINCT Departemen AS Dept From Persis.dbo.tblKaryawan AS TblK where Company IN (@Company) AND (NRP = @DeptID OR @DeptID='KB10041' OR @DeptID='KU15002' OR @DeptID='KC12072' OR @DeptID='KB08037' OR @DeptID='KA06049' OR @DeptID='8402003' OR @DeptID='KB11107' OR @DeptID='DR00020' OR @DeptID='DR00011' OR @DeptID IN (Select NRP from Persis.dbo.tblAdmin where Departemen = TblK.Departemen))</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Dept">
+          <DataField>Dept</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Company">
+      <Query>
+        <DataSourceName>DataSource2</DataSourceName>
+        <CommandText>SELECT Company, CASE WHEN Company = 'KPP' THEN 0 ELSE 1 END AS Urut
+FROM(Select DISTINCT Company From Persis.dbo.tblKaryawan) AS Tbl
+ORDER By Urut</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Company">
+          <DataField>Company</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Urut">
+          <DataField>Urut</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="NRP">
+      <Query>
+        <DataSourceName>DataSource2</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Company">
+            <Value>=Parameters!Company.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Departemen">
+            <Value>=Parameters!Departemen.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>Select NRP From Persis.dbo.tblKaryawan where Company IN (@Company) AND Departemen IN (@Departemen)</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="NRP">
+          <DataField>NRP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="DeptID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=MID(User!UserID,12,17)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Dept ID</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="Company">
+      <DataType>String</DataType>
+      <Prompt>Company</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Company</DataSetName>
+          <ValueField>Company</ValueField>
+          <LabelField>Company</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="Departemen">
+      <DataType>String</DataType>
+      <Prompt>Departemen</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DataDepartemen</DataSetName>
+          <ValueField>Dept</ValueField>
+          <LabelField>Dept</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="a">
+      <DataType>DateTime</DataType>
+      <Prompt>Awal :</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="b">
+      <DataType>DateTime</DataType>
+      <Prompt>Akhir :</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Gol">
+      <DataType>String</DataType>
+      <Prompt>Gol</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>18-DW</Value>
+            <Label>18-DW</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>19-UP</Value>
+            <Label>19-UP</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="NRP">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>NRP</DataSetName>
+          <ValueField>NRP</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Hidden>true</Hidden>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>id-ID</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>ad79cc0c-8d25-4e2a-8508-9756da5013e8</rd:ReportID>
+</Report>

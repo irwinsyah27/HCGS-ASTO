@@ -1,0 +1,280 @@
+	body
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background-color: #ccccff;
+}
+
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #7777ff;
+	font-weight: bold;
+	margin: 2px 2px 2px 2px;
+}
+a {
+	text-decoration: none;
+}
+
+/* ==== */
+
+
+.teksbiasa {
+	font-size: 10pt;
+}
+.teksinggris {
+	font-size: 10pt;
+	color: #0033CC;
+}
+.teksindo {
+	font-size: 10pt;
+	color: #004444;
+}
+
+/* ==== */
+
+.ringkasbiasa {
+	font-size: 8pt;
+}
+.ringkasinggris {
+	font-size: 8pt;
+	color: #0033CC;
+}
+.ringkasindo {
+	font-size: 8pt;
+	color: #005555;
+}
+
+/* ==== */
+
+.subjudul2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14pt;
+	color: #993300;
+}
+.subjudul2en {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14pt;
+	color: #0033CC;
+}
+.subjudul2id {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14pt;
+	color: #004444;
+}
+
+/* ==== */
+
+.ngotak {
+	font-family: "Courier New", Courier, mono;
+	font-size: 10pt;
+	color: #990066;
+	font-style: normal;
+	overflow: auto;
+}
+
+/* ==== */
+
+.judulinggris {
+    font-style:italic;
+}
+.tekskomen {
+	font-size: 9pt;
+	color: #660033;
+	margin: 4px 2px 16px 2px;
+	padding: 5px 2px 5px 2px;
+	border-top: 0px solid #669933;
+	border-right: 0px solid #669933;
+	border-bottom: 0px solid #669933;
+	border-left: 0px solid #669933;
+}
+.tekstanggapan {
+	font-size: 8pt;
+	color: #0000CC;
+}
+.tambahkomen {
+	font-size: 9pt;
+	color: #660033;
+	border: 1px solid #336600;
+	margin: 4px;
+	padding: 5px 8px 5px 8px;
+}
+.komendihapus {
+	font-style:italic;
+	font-size: 9pt;
+	color: #666666;
+}
+.komendari {
+	font-style:italic;
+	font-size: 8pt;
+	color: #888844;
+	text-align: right;
+}
+.tombolreply {
+	font-style: normal;
+	border-bottom: 1px dashed;
+	cursor: pointer;
+	color: black;
+}
+.tulisankecil {
+	font-size: 8pt;
+}
+.ratholes {
+	font-size: 8pt;
+	color: #FF0000;
+	margin: 0px 0px 3px 0px;
+	border-bottom: solid 1px #000066;
+	text-align: center;
+}
+.halbaruatas {
+	font-size: 8pt;
+	font-weight: bold;
+	color: #0000FF;
+	margin: 0px;
+	border-bottom: solid 1px #000066;
+	text-align: center;
+}
+
+
+/* ==== */
+
+.ngambangkiri {
+	border-width: 1px;
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	text-align:center;
+}
+.ngambangkanan {
+	border-width: 1px;
+	float: right;
+	margin: 5px;
+	padding: 5px;
+	text-align:center;
+}
+.ngambangdoang {
+	border-width: 1px;
+	margin: 5px;
+	padding: 5px;
+	text-align:center;
+}
+
+/* ==== */
+
+.pinggirkiri {
+	border: 2px solid #FF3399;
+	background-color: #FFDDEE;
+}
+.pinggirkiri td ul {
+	list-style: square;
+	margin: 2px 0 2px 14px;
+	padding: 0px;
+}
+.pinggirkiri td ul li {
+	color: #5555cc;
+	font-size: 8pt;
+	text-decoration: none;
+	margin: 5px 0;
+}
+.pinggirkiri td {
+	color: #5555cc;
+	font-size: 8pt;
+}
+
+/* ==== */
+
+.isiartikel {
+	border: 2px solid #8888FF;
+	background-color: #ffff99;
+	background-image: url(latarart.gif);
+	margin: 0 auto;
+	padding: 8px;
+	width: 100%;
+}
+.sistemkomen
+{
+	background-color: #ffff99;
+	background-image: url(latarart.gif);
+	margin: 0 auto;
+	padding: 8px;
+	width: 100%;
+	border-right: #009900 1px solid;
+	border-top: #009900 1px solid;
+	border-left: #009900 1px solid;
+	border-bottom: #009900 1px solid;
+}
+.border3 {
+	border: 2px solid #FF3399;
+}
+
+/* ==== */
+
+.pilihbahasa {
+	font-size: 10pt;
+}
+.postedby {
+	font-size: 8pt;
+	color:#666666;
+	margin: 2px 0px 0px 0px ;
+	padding: 0px;
+}
+.kotakkomenluar {
+	font-size: 10pt;
+}
+.kotakkomendalam {
+	font-size: 10pt;
+}
+.isiankomen {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #660033;
+}
+.readmore {
+	color: #7777ff;
+	text-align: right;
+	text-decoration: none;
+	font-size: 8pt;
+	margin: 0px 0px 0px 0px;
+}
+.tulisannavi {
+	color: #FF0000;
+	text-align:center
+}
+.pemisah {}
+.isiartikel a {
+	color: #FF3300;
+/*	background: #EEEEAA; */
+}
+p#update {
+	border: 1px dashed #000000;
+	margin: 5px;
+	padding: 5px;
+	background: #FFFFDD;
+}
+div#update  {
+	border: 1px dashed #000000;
+	margin: 9px 5px;
+	padding: 0px 5px;
+	background: #FFFFDD;
+}
+p.update {
+	border: 1px dashed #000000;
+	margin: 5px;
+	padding: 5px;
+	background: #FFFFDD;
+}
+div.update  {
+	border: 1px dashed #000000;
+	margin: 9px 5px;
+	padding: 0px 5px;
+	background: #FFFFDD;
+}
+
+.kotakin {
+	border: 1px #CC3300 solid;
+	padding: 0px 5px;
+}
+.kotakin-putus2 {
+	border: 1px #CC3300 dashed;
+	padding: 0px 5px;
+}

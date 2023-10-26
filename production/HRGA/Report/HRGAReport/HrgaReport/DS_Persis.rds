@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DS_Persis">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=PABBAPCO401\SQLEXPRESS;Initial Catalog=Persis;Connect Timeout=0</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>de383d71-57a8-4be4-89d6-789a873d704d</DataSourceID>
+</RptDataSource>

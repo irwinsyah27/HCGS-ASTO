@@ -1,0 +1,1 @@
+<BODY> <SCRIPT language='Javascript'> alert('ga boleh masuk !!'); close();</SCRIPT> </BODY>

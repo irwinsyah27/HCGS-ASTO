@@ -1,0 +1,1686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:DataSourceID>a33d49ae-e34d-4ada-97a1-0accb7561fb4</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>1.5cm</RightMargin>
+  <PageWidth>21cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="Departemen">
+      <DataType>String</DataType>
+      <Prompt>Dept :</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Departemen</DataSetName>
+          <ValueField>Dept</ValueField>
+          <LabelField>Dept</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="awal">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Format(Today(),"dd MMM yyyy")</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Tgl :</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="akhir">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=Format(Today(),"dd MMM yyyy")</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>s/d :</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <List Name="List1">
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!NomorST.Value</SortExpression>
+            <Direction>Ascending</Direction>
+          </SortBy>
+        </Sorting>
+        <Left>0.25cm</Left>
+        <ReportItems>
+          <Image Name="image5">
+            <Sizing>FitProportional</Sizing>
+            <Left>3.25cm</Left>
+            <MIMEType />
+            <Top>16cm</Top>
+            <ZIndex>72</ZIndex>
+            <Width>0.75cm</Width>
+            <Source>External</Source>
+            <Style />
+            <Height>0.5cm</Height>
+            <Value>=IIf(Fields!ProjectManager.Value="0192069","http://pama-adro/hrga/cuti/images/sign/for0.JPG","http://pama-adro/hrga/cuti/images/sign/FOR.JPG")</Value>
+          </Image>
+          <Image Name="image4">
+            <Sizing>FitProportional</Sizing>
+            <Left>9cm</Left>
+            <MIMEType />
+            <Top>16cm</Top>
+            <ZIndex>71</ZIndex>
+            <Width>0.75cm</Width>
+            <Source>External</Source>
+            <Style />
+            <Height>0.5cm</Height>
+            <Value>=IIf(Fields!HRGA_Head.Value="6104018","http://pama-adro/hrga/cuti/images/sign/for0.JPG","http://pama-adro/hrga/cuti/images/sign/FOR.JPG")</Value>
+          </Image>
+          <Line Name="line9">
+            <Left>0.25cm</Left>
+            <Top>3cm</Top>
+            <ZIndex>70</ZIndex>
+            <Width>16.75cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0cm</Height>
+          </Line>
+          <Line Name="line3">
+            <Left>0.25cm</Left>
+            <Top>2.75cm</Top>
+            <ZIndex>69</ZIndex>
+            <Width>16.75cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="textbox64">
+            <Left>0.25cm</Left>
+            <Top>11.92063cm</Top>
+            <rd:DefaultName>textbox64</rd:DefaultName>
+            <ZIndex>68</ZIndex>
+            <Width>6.50794cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.50265cm</Height>
+            <Value>Flight Fare :</Value>
+          </Textbox>
+          <Line Name="line19">
+            <Left>0.25cm</Left>
+            <Top>12.25cm</Top>
+            <ZIndex>67</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>-7.24074cm</Height>
+          </Line>
+          <Line Name="line14">
+            <Left>17cm</Left>
+            <Top>12.25cm</Top>
+            <ZIndex>66</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>-7.24074cm</Height>
+          </Line>
+          <Line Name="line11">
+            <Left>0.25cm</Left>
+            <Top>9.75cm</Top>
+            <ZIndex>65</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>7.5cm</Height>
+          </Line>
+          <Line Name="line4">
+            <Left>17cm</Left>
+            <Top>9.75cm</Top>
+            <ZIndex>64</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>7.5cm</Height>
+          </Line>
+          <Line Name="line16">
+            <Left>0.25cm</Left>
+            <Top>3cm</Top>
+            <ZIndex>63</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>3.75661cm</Height>
+          </Line>
+          <Line Name="line15">
+            <Left>17cm</Left>
+            <Top>3cm</Top>
+            <ZIndex>62</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>3.75661cm</Height>
+          </Line>
+          <Table Name="table1">
+            <Left>0.5cm</Left>
+            <Top>12.5cm</Top>
+            <ZIndex>61</ZIndex>
+            <Width>16.25001cm</Width>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Nama1">
+                          <rd:DefaultName>Nama1</rd:DefaultName>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontSize>9pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Nama1.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Umur_1">
+                          <rd:DefaultName>Umur_1</rd:DefaultName>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontSize>9pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Umur.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Tanggal">
+                          <rd:DefaultName>Tanggal</rd:DefaultName>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontSize>9pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Format(Fields!Tanggal.Value,"dd MMM yyyy")</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Dari_Ke">
+                          <rd:DefaultName>Dari_Ke</rd:DefaultName>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontSize>9pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Dari_Ke.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Ket">
+                          <rd:DefaultName>Ket</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <FontSize>9pt</FontSize>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Ket.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.58333cm</Height>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox62">
+                          <rd:DefaultName>textbox62</rd:DefaultName>
+                          <ZIndex>9</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Nama</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox60">
+                          <rd:DefaultName>textbox60</rd:DefaultName>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Umur</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox61">
+                          <rd:DefaultName>textbox61</rd:DefaultName>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Tanggal</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox59">
+                          <rd:DefaultName>textbox59</rd:DefaultName>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Dari Ke</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox63">
+                          <rd:DefaultName>textbox63</rd:DefaultName>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Keterangan</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.58333cm</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>4.78511cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25924cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>2.51848cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>4.21555cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>3.47163cm</Width>
+              </TableColumn>
+            </TableColumns>
+            <Height>1.16666cm</Height>
+          </Table>
+          <Line Name="line13">
+            <Left>0.25cm</Left>
+            <Top>0.25cm</Top>
+            <ZIndex>60</ZIndex>
+            <Width>16.75cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0cm</Height>
+          </Line>
+          <Line Name="line12">
+            <Left>0.25cm</Left>
+            <Top>2.75cm</Top>
+            <ZIndex>59</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>-2.48677cm</Height>
+          </Line>
+          <Line Name="line1">
+            <Left>17cm</Left>
+            <Top>2.75cm</Top>
+            <ZIndex>58</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>-2.48677cm</Height>
+          </Line>
+          <Line Name="line7">
+            <Left>0.25cm</Left>
+            <Top>13.75cm</Top>
+            <ZIndex>57</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>5.25cm</Height>
+          </Line>
+          <Line Name="line6">
+            <Left>0.25cm</Left>
+            <Top>19cm</Top>
+            <ZIndex>56</ZIndex>
+            <Width>16.75cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0cm</Height>
+          </Line>
+          <Line Name="line5">
+            <Left>17cm</Left>
+            <Top>13.75cm</Top>
+            <ZIndex>55</ZIndex>
+            <Width>0cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>5.25cm</Height>
+          </Line>
+          <Textbox Name="textbox55">
+            <Left>8.5cm</Left>
+            <Top>17.32936cm</Top>
+            <ZIndex>54</ZIndex>
+            <Width>5.75cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>HRGA Dept. Head</Value>
+          </Textbox>
+          <Textbox Name="textbox51">
+            <Left>2.5cm</Left>
+            <Top>17.32936cm</Top>
+            <ZIndex>53</ZIndex>
+            <Width>5.75cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Project Manager</Value>
+          </Textbox>
+          <Textbox Name="textbox50">
+            <Left>8.5cm</Left>
+            <Top>16.75cm</Top>
+            <ZIndex>52</ZIndex>
+            <Width>5.75cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Yayan Rudianto</Value>
+          </Textbox>
+          <Textbox Name="textbox49">
+            <Left>2.5cm</Left>
+            <Top>16.75cm</Top>
+            <rd:DefaultName>textbox49</rd:DefaultName>
+            <ZIndex>51</ZIndex>
+            <Width>5.75cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Agus Dwi Widiyanto</Value>
+          </Textbox>
+          <Image Name="image3">
+            <Sizing>Fit</Sizing>
+            <Left>9.5cm</Left>
+            <MIMEType />
+            <Top>14.39418cm</Top>
+            <ZIndex>50</ZIndex>
+            <Width>3.25cm</Width>
+            <Source>External</Source>
+            <Style />
+            <Height>2.25cm</Height>
+            <Value>="http://pama-adro/hrga/cuti/images/sign/" &amp; Fields!HRGA_Head.Value &amp; ".JPG"</Value>
+          </Image>
+          <Textbox Name="textbox48">
+            <Left>3cm</Left>
+            <Top>13.75cm</Top>
+            <rd:DefaultName>textbox48</rd:DefaultName>
+            <ZIndex>49</ZIndex>
+            <Width>10.25cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.50265cm</Height>
+            <Value>PERSETUJUAN</Value>
+          </Textbox>
+          <Line Name="line2">
+            <Left>0.25cm</Left>
+            <Top>7cm</Top>
+            <ZIndex>48</ZIndex>
+            <Width>16.75cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="textbox47">
+            <Left>8.75cm</Left>
+            <Top>7cm</Top>
+            <ZIndex>47</ZIndex>
+            <Width>8cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <TextDecoration>Underline</TextDecoration>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.50265cm</Height>
+            <Value>Sisa cuti :</Value>
+          </Textbox>
+          <Textbox Name="textbox52">
+            <Left>8.75cm</Left>
+            <Top>8.60582cm</Top>
+            <ZIndex>46</ZIndex>
+            <Width>3.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Cuti besar</Value>
+          </Textbox>
+          <Textbox Name="textbox53">
+            <Left>8.75cm</Left>
+            <Top>8.10582cm</Top>
+            <ZIndex>45</ZIndex>
+            <Width>3.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Periode cuti tahunan</Value>
+          </Textbox>
+          <Textbox Name="textbox54">
+            <Left>8.75cm</Left>
+            <Top>7.60582cm</Top>
+            <ZIndex>44</ZIndex>
+            <Width>3.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Periode cuti tahunan</Value>
+          </Textbox>
+          <Textbox Name="textbox56">
+            <Left>12.75cm</Left>
+            <Top>8.60582cm</Top>
+            <ZIndex>43</ZIndex>
+            <Width>3.99603cm</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=": " &amp; First(Fields!SisaCuti3.Value) &amp; " hari"</Value>
+          </Textbox>
+          <Textbox Name="textbox57">
+            <Left>12.75cm</Left>
+            <Top>8.10582cm</Top>
+            <ZIndex>42</ZIndex>
+            <Width>3.99603cm</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!SisaCuti2.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox58">
+            <Left>12.75cm</Left>
+            <Top>7.60582cm</Top>
+            <ZIndex>41</ZIndex>
+            <Width>3.99603cm</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!SisaCuti1.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox31">
+            <Left>0.5cm</Left>
+            <Top>9.10582cm</Top>
+            <ZIndex>40</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Perjalanan</Value>
+          </Textbox>
+          <Textbox Name="textbox32">
+            <Left>0.5cm</Left>
+            <Top>8.60582cm</Top>
+            <ZIndex>39</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Besar</Value>
+          </Textbox>
+          <Textbox Name="textbox33">
+            <Left>0.5cm</Left>
+            <Top>8.10582cm</Top>
+            <ZIndex>38</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Tahunan</Value>
+          </Textbox>
+          <Textbox Name="textbox34">
+            <Left>0.5cm</Left>
+            <Top>7.60582cm</Top>
+            <ZIndex>37</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Lapangan</Value>
+          </Textbox>
+          <Textbox Name="textbox35">
+            <Left>3.75cm</Left>
+            <Top>9.10582cm</Top>
+            <ZIndex>36</ZIndex>
+            <Width>4.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!C_Perjalanan.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox36">
+            <Left>3.75cm</Left>
+            <Top>8.60582cm</Top>
+            <ZIndex>35</ZIndex>
+            <Width>4.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!C_Besar.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox37">
+            <Left>3.75cm</Left>
+            <Top>8.10582cm</Top>
+            <ZIndex>34</ZIndex>
+            <Width>4.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!C_Tahunan.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox38">
+            <Left>3.75cm</Left>
+            <Top>7.60582cm</Top>
+            <ZIndex>33</ZIndex>
+            <Width>4.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!C_Lapangan.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox30">
+            <Left>0.25cm</Left>
+            <Top>7cm</Top>
+            <rd:DefaultName>textbox30</rd:DefaultName>
+            <ZIndex>32</ZIndex>
+            <Width>8.25cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <TextDecoration>Underline</TextDecoration>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.50265cm</Height>
+            <Value>Cuti Dilaksanakan :</Value>
+          </Textbox>
+          <Textbox Name="textbox19">
+            <Left>12.75cm</Left>
+            <Top>3.5cm</Top>
+            <ZIndex>31</ZIndex>
+            <Width>4.25cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!StatusKeluarga.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox20">
+            <Left>9.75cm</Left>
+            <Top>3.5cm</Top>
+            <ZIndex>30</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Status</Value>
+          </Textbox>
+          <Textbox Name="textbox17">
+            <Left>12.72354cm</Left>
+            <Top>4cm</Top>
+            <ZIndex>29</ZIndex>
+            <Width>4.25cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=IIf(First(Fields!StatusBawaKeluarga.Value)=True,"Ya","Tidak")</Value>
+          </Textbox>
+          <Textbox Name="textbox18">
+            <Left>9.75cm</Left>
+            <Top>4cm</Top>
+            <ZIndex>28</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Bawa Keluarga</Value>
+          </Textbox>
+          <Line Name="line8">
+            <Left>9.75cm</Left>
+            <Top>5cm</Top>
+            <ZIndex>27</ZIndex>
+            <Width>7cm</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0cm</Height>
+          </Line>
+          <Textbox Name="textbox13">
+            <Left>3.5cm</Left>
+            <Top>6cm</Top>
+            <ZIndex>26</ZIndex>
+            <Width>6cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!Telepon.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox14">
+            <Left>0.5cm</Left>
+            <Top>6cm</Top>
+            <ZIndex>25</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Telephone</Value>
+          </Textbox>
+          <Textbox Name="textbox15">
+            <Left>12.75cm</Left>
+            <Top>4.5cm</Top>
+            <ZIndex>24</ZIndex>
+            <Width>4.25cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!PeriodeTugas.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox16">
+            <Left>9.75cm</Left>
+            <Top>4.5cm</Top>
+            <ZIndex>23</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Periode Dinas</Value>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <Left>3.5cm</Left>
+            <Top>5.5cm</Top>
+            <ZIndex>22</ZIndex>
+            <Width>6cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!AlamatTinggal.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox12">
+            <Left>0.5cm</Left>
+            <Top>5.5cm</Top>
+            <ZIndex>21</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Alamat</Value>
+          </Textbox>
+          <Textbox Name="textbox10">
+            <Left>0.25cm</Left>
+            <Top>3cm</Top>
+            <rd:DefaultName>textbox10</rd:DefaultName>
+            <ZIndex>20</ZIndex>
+            <Width>4.5cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <TextDecoration>Underline</TextDecoration>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Diberikan kepada :</Value>
+          </Textbox>
+          <Textbox Name="textbox9">
+            <Left>5cm</Left>
+            <Top>0.75cm</Top>
+            <rd:DefaultName>textbox9</rd:DefaultName>
+            <ZIndex>19</ZIndex>
+            <Width>6.25cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontFamily>Verdana</FontFamily>
+              <FontWeight>700</FontWeight>
+              <FontSize>18pt</FontSize>
+              <VerticalAlign>Bottom</VerticalAlign>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>1cm</Height>
+            <Value>SURAT CUTI </Value>
+          </Textbox>
+          <Image Name="image2">
+            <Sizing>Fit</Sizing>
+            <Left>0.5cm</Left>
+            <Top>0.5cm</Top>
+            <ZIndex>18</ZIndex>
+            <Width>2cm</Width>
+            <Source>Embedded</Source>
+            <Style />
+            <Height>2cm</Height>
+            <Value>logo</Value>
+          </Image>
+          <Textbox Name="Departemen">
+            <Left>3.5cm</Left>
+            <Top>4.5cm</Top>
+            <rd:DefaultName>Departemen</rd:DefaultName>
+            <ZIndex>17</ZIndex>
+            <Width>6cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!Departemen.Value)</Value>
+          </Textbox>
+          <Textbox Name="Jabatan">
+            <Left>3.5cm</Left>
+            <Top>5cm</Top>
+            <rd:DefaultName>Jabatan</rd:DefaultName>
+            <ZIndex>16</ZIndex>
+            <Width>6cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!Jabatan.Value)</Value>
+          </Textbox>
+          <Textbox Name="Nama">
+            <Left>3.5cm</Left>
+            <Top>4cm</Top>
+            <rd:DefaultName>Nama</rd:DefaultName>
+            <ZIndex>15</ZIndex>
+            <Width>6cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!Nama.Value)</Value>
+          </Textbox>
+          <Textbox Name="Nrp">
+            <Left>3.5cm</Left>
+            <Top>3.5cm</Top>
+            <rd:DefaultName>Nrp</rd:DefaultName>
+            <ZIndex>14</ZIndex>
+            <Width>6cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!Nrp.Value)</Value>
+          </Textbox>
+          <Textbox Name="textbox5">
+            <Left>0.5cm</Left>
+            <Top>11.25cm</Top>
+            <ZIndex>13</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Keterangan</Value>
+          </Textbox>
+          <Textbox Name="textbox4">
+            <Left>0.5cm</Left>
+            <Top>10.75cm</Top>
+            <ZIndex>12</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Alamat Cuti</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Left>0.5cm</Left>
+            <Top>10.25cm</Top>
+            <ZIndex>11</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Akhir</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Left>0.5cm</Left>
+            <Top>9.75cm</Top>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <ZIndex>10</ZIndex>
+            <Width>3cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Awal</Value>
+          </Textbox>
+          <Image Name="image1">
+            <Sizing>Fit</Sizing>
+            <Left>3.75cm</Left>
+            <MIMEType />
+            <Top>14.39418cm</Top>
+            <ZIndex>9</ZIndex>
+            <Width>3.25cm</Width>
+            <Source>External</Source>
+            <Style />
+            <Height>2.25cm</Height>
+            <Value>="http://pama-adro/hrga/cuti/images/sign/" &amp; Fields!ProjectManager.Value &amp; ".JPG"</Value>
+          </Image>
+          <Textbox Name="Keterangan">
+            <Left>3.75cm</Left>
+            <Top>11.25cm</Top>
+            <rd:DefaultName>Keterangan</rd:DefaultName>
+            <ZIndex>8</ZIndex>
+            <Width>13cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!Keterangan.Value)</Value>
+          </Textbox>
+          <Textbox Name="AlamatCuti">
+            <Left>3.75cm</Left>
+            <Top>10.75cm</Top>
+            <rd:DefaultName>AlamatCuti</rd:DefaultName>
+            <ZIndex>7</ZIndex>
+            <Width>13cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=First(Fields!AlamatCuti.Value)</Value>
+          </Textbox>
+          <Textbox Name="Akhir">
+            <Left>3.75cm</Left>
+            <Top>10.25cm</Top>
+            <rd:DefaultName>Akhir</rd:DefaultName>
+            <ZIndex>6</ZIndex>
+            <Width>4.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=Format(First(Fields!Akhir.Value),"dd MMMM yyyy")</Value>
+          </Textbox>
+          <Textbox Name="Awal">
+            <Left>3.75cm</Left>
+            <Top>9.75cm</Top>
+            <rd:DefaultName>Awal</rd:DefaultName>
+            <ZIndex>5</ZIndex>
+            <Width>4.75cm</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=Format(First(Fields!Awal.Value),"dd MMMM yyyy")</Value>
+          </Textbox>
+          <Textbox Name="NomorST">
+            <Left>5cm</Left>
+            <Top>1.5cm</Top>
+            <rd:DefaultName>NomorST</rd:DefaultName>
+            <ZIndex>4</ZIndex>
+            <Width>6.25cm</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontFamily>Tahoma</FontFamily>
+              <FontWeight>700</FontWeight>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>=Fields!NomorST.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox8">
+            <Left>0.5cm</Left>
+            <Top>4.5cm</Top>
+            <ZIndex>3</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Departemen</Value>
+          </Textbox>
+          <Textbox Name="textbox7">
+            <Left>0.5cm</Left>
+            <Top>5cm</Top>
+            <ZIndex>2</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Jabatan</Value>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Left>0.5cm</Left>
+            <Top>4cm</Top>
+            <ZIndex>1</ZIndex>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Nama</Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <Left>0.5cm</Left>
+            <Top>3.5cm</Top>
+            <Width>2.75cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.5cm</Height>
+            <Value>Nrp</Value>
+          </Textbox>
+        </ReportItems>
+        <DataSetName>DataSource1</DataSetName>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <Color>SlateGray</Color>
+        </Style>
+        <Grouping Name="list1_NomorST">
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+          <GroupExpressions>
+            <GroupExpression>=Fields!NomorST.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <Height>19.25cm</Height>
+      </List>
+    </ReportItems>
+    <Height>19.5cm</Height>
+  </Body>
+  <rd:ReportID>286f6767-3a99-4833-96cb-4c25f9fbe89e</rd:ReportID>
+  <LeftMargin>1.5cm</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo">
+      <ImageData>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</ImageData>
+      <MIMEType>image/jpeg</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="Departemen">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>Select Dept From tbl_Dept</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Dept">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dept</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSource1">
+      <Query>
+        <CommandText>SELECT     tblSutu.NomorST, tblSutu.Nrp, vw_tblKaryawan.Nama, tblSutu.tglST, tblSutu.Tujuan, tblSutu.Keperluan, tblSutu.Penginapan, tblSutu.Awal, tblSutu.Akhir, 
+                      tblSutu.Transport, tblSutu.C_Lapangan, tblSutu.C_Tahunan, tblSutu.C_Besar, tblSutu.C_Perjalanan, tblSutu.Tiket, tblSutu.Hotel, tblSutu.UPD, 
+                      tblSutu.JP3U, tblSutu.Taxi_Bus, tblSutu.PeriodeTugas, tblSutu.Uang_Muka, tblSutu.PV, tblSutu.AlamatCuti, tblSutu.Keterangan, tblSutu.SisaCuti1, 
+                      tblSutu.SisaCuti2, tblSutu.SisaCuti3, tblSutu.SisaCuti_Tahunan, tblSutu.SisaCuti_Besar, tblSutu.PersetujuanAtasan, tblSutu.NrpAtasan, 
+                      tblSutu.TglPersetujuan, tblSutu.Catatan, tblSutu.HR_Officer, tblSutu.HRGA_Head, tblSutu.TglValidasi, tblSutu.CatatanHrga, tblSutu.ProjectManager, 
+                      tblSutu.TglPersetujuanPM, tblSutu.CatatanPM, vw_tblKaryawan.Departemen, vw_tblKaryawan.Golongan, vw_tblKaryawan.Jabatan, 
+                      vw_tblKaryawan.StatusKeluarga, vw_tblKaryawan.StatusBawaKeluarga, vw_tblKaryawan.AlamatTinggal, vw_tblKaryawan.Telepon, 
+                      tblFlight.Nama AS Nama1, tblFlight.Umur, tblFlight.Tanggal, tblFlight.Dari_Ke, tblFlight.Keterangan AS Ket
+FROM         tblSutu LEFT OUTER JOIN
+                      tblFlight ON tblSutu.NomorST = tblFlight.NomorST LEFT OUTER JOIN
+                      vw_tblKaryawan ON tblSutu.Nrp = vw_tblKaryawan.Nrp
+WHERE     (tblSutu.Keperluan = 'CUTI') AND (tblSutu.PersetujuanAtasan = 1) AND (tblSutu.ProjectManager IS NOT NULL) AND (tblSutu.tglST BETWEEN @awal AND 
+                      @akhir) AND (vw_tblKaryawan.Departemen IN (@Departemen))
+ORDER BY tblFlight.Tanggal</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@awal">
+            <Value>=Parameters!awal.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@akhir">
+            <Value>=Parameters!akhir.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Departemen">
+            <Value>=Parameters!Departemen.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>DataSource1</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="NomorST">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NomorST</DataField>
+        </Field>
+        <Field Name="Nrp">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Nrp</DataField>
+        </Field>
+        <Field Name="Nama">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Nama</DataField>
+        </Field>
+        <Field Name="tglST">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>tglST</DataField>
+        </Field>
+        <Field Name="Tujuan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Tujuan</DataField>
+        </Field>
+        <Field Name="Keperluan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Keperluan</DataField>
+        </Field>
+        <Field Name="Penginapan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Penginapan</DataField>
+        </Field>
+        <Field Name="Awal">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>Awal</DataField>
+        </Field>
+        <Field Name="Akhir">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>Akhir</DataField>
+        </Field>
+        <Field Name="Transport">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Transport</DataField>
+        </Field>
+        <Field Name="C_Lapangan">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>C_Lapangan</DataField>
+        </Field>
+        <Field Name="C_Tahunan">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>C_Tahunan</DataField>
+        </Field>
+        <Field Name="C_Besar">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>C_Besar</DataField>
+        </Field>
+        <Field Name="C_Perjalanan">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>C_Perjalanan</DataField>
+        </Field>
+        <Field Name="Tiket">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Tiket</DataField>
+        </Field>
+        <Field Name="Hotel">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Hotel</DataField>
+        </Field>
+        <Field Name="UPD">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>UPD</DataField>
+        </Field>
+        <Field Name="JP3U">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>JP3U</DataField>
+        </Field>
+        <Field Name="Taxi_Bus">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Taxi_Bus</DataField>
+        </Field>
+        <Field Name="PeriodeTugas">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PeriodeTugas</DataField>
+        </Field>
+        <Field Name="Uang_Muka">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Uang_Muka</DataField>
+        </Field>
+        <Field Name="PV">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PV</DataField>
+        </Field>
+        <Field Name="AlamatCuti">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AlamatCuti</DataField>
+        </Field>
+        <Field Name="Keterangan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Keterangan</DataField>
+        </Field>
+        <Field Name="SisaCuti1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SisaCuti1</DataField>
+        </Field>
+        <Field Name="SisaCuti2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SisaCuti2</DataField>
+        </Field>
+        <Field Name="SisaCuti3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SisaCuti3</DataField>
+        </Field>
+        <Field Name="SisaCuti_Tahunan">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SisaCuti_Tahunan</DataField>
+        </Field>
+        <Field Name="SisaCuti_Besar">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SisaCuti_Besar</DataField>
+        </Field>
+        <Field Name="PersetujuanAtasan">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>PersetujuanAtasan</DataField>
+        </Field>
+        <Field Name="NrpAtasan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NrpAtasan</DataField>
+        </Field>
+        <Field Name="TglPersetujuan">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>TglPersetujuan</DataField>
+        </Field>
+        <Field Name="Catatan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Catatan</DataField>
+        </Field>
+        <Field Name="HR_Officer">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>HR_Officer</DataField>
+        </Field>
+        <Field Name="HRGA_Head">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>HRGA_Head</DataField>
+        </Field>
+        <Field Name="TglValidasi">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>TglValidasi</DataField>
+        </Field>
+        <Field Name="CatatanHrga">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CatatanHrga</DataField>
+        </Field>
+        <Field Name="ProjectManager">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ProjectManager</DataField>
+        </Field>
+        <Field Name="TglPersetujuanPM">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>TglPersetujuanPM</DataField>
+        </Field>
+        <Field Name="CatatanPM">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CatatanPM</DataField>
+        </Field>
+        <Field Name="Departemen">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Departemen</DataField>
+        </Field>
+        <Field Name="Golongan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Golongan</DataField>
+        </Field>
+        <Field Name="Jabatan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Jabatan</DataField>
+        </Field>
+        <Field Name="StatusKeluarga">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>StatusKeluarga</DataField>
+        </Field>
+        <Field Name="StatusBawaKeluarga">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>StatusBawaKeluarga</DataField>
+        </Field>
+        <Field Name="AlamatTinggal">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>AlamatTinggal</DataField>
+        </Field>
+        <Field Name="Telepon">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Telepon</DataField>
+        </Field>
+        <Field Name="Nama1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Nama1</DataField>
+        </Field>
+        <Field Name="Umur">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Umur</DataField>
+        </Field>
+        <Field Name="Tanggal">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>Tanggal</DataField>
+        </Field>
+        <Field Name="Dari_Ke">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dari_Ke</DataField>
+        </Field>
+        <Field Name="Ket">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Ket</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Nomor">
+      <Query>
+        <CommandText>SELECT DISTINCT tblSutu.NomorST
+FROM         tblSutu INNER JOIN
+                      tblKaryawan ON tblSutu.Nrp = tblKaryawan.Nrp
+WHERE     (tblSutu.Keperluan = 'CUTI') AND (tblSutu.PersetujuanAtasan = 1) AND (tblSutu.ProjectManager IS NOT NULL) AND 
+                      (tblKaryawan.Departemen IN (@Departemen))
+ORDER BY tblSutu.NomorST DESC</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Departemen">
+            <Value>=Parameters!Departemen.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>DataSource1</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="NomorST">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NomorST</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>17.5cm</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

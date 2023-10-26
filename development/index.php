@@ -1,0 +1,1 @@
+<BODY> <SCRIPT language='Javascript'> alert('Ga boleh development !!'); close();</SCRIPT> </BODY>

@@ -1,0 +1,1 @@
+<BODY> <SCRIPT language='Javascript'> alert('Accsess Dinied !!'); close();</SCRIPT> </BODY>

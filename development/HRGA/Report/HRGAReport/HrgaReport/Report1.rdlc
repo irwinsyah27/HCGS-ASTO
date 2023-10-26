@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Data_abs1ConnectionString">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>e21b66eb-3ca6-4ebb-990c-58c46bb28b4d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>0.3in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>0.75in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="nrp">
+                  <rd:DefaultName>nrp</rd:DefaultName>
+                  <ZIndex>4</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Left</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!nrp.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_nrp">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!nrp.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1.75in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="NAMA">
+                  <rd:DefaultName>NAMA</rd:DefaultName>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Left</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!NAMA.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_NAMA">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!NAMA.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.625in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Golongan">
+                  <rd:DefaultName>Golongan</rd:DefaultName>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Golongan.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Golongan">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Golongan.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.625in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Dept">
+                  <rd:DefaultName>Dept</rd:DefaultName>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Dept.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Dept">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Dept.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Absent">
+                  <rd:DefaultName>Absent</rd:DefaultName>
+                  <ZIndex>5</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>DarkGray</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Absent.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Absent">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Absent.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>DataSet1_QLembur1</DataSetName>
+        <Width>4.05in</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <TextAlign>Center</TextAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <BackgroundColor>DarkGray</BackgroundColor>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <Value>Nrp / Nama / Golongan / Departemen</Value>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>0.5in</Height>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.25in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Absent_1">
+                    <rd:DefaultName>Absent_1</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <TextAlign>Center</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>MistyRose</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Count(Fields!Absent.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>1in</Height>
+  </Body>
+  <rd:ReportID>e87240fe-da94-4f00-b928-0d8cf16502c7</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1_QLembur1">
+      <rd:DataSetInfo>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterName>QLembur1TableAdapter</rd:TableAdapterName>
+        <rd:TableName>QLembur1</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>SELECT     nrp, NAMA, Golongan, TINGKATAN, Dept, Absent, jkp_opr
+FROM         QLembur1
+WHERE     (Dept = @Dept) AND (tanggal BETWEEN @Awal AND @Akhir)
+Order By Absent, Nrp</CommandText>
+        <DataSourceName>Data_absConnectionString</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="nrp">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>nrp</DataField>
+        </Field>
+        <Field Name="NAMA">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NAMA</DataField>
+        </Field>
+        <Field Name="Golongan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Golongan</DataField>
+        </Field>
+        <Field Name="TINGKATAN">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TINGKATAN</DataField>
+        </Field>
+        <Field Name="Dept">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dept</DataField>
+        </Field>
+        <Field Name="Absent">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Absent</DataField>
+        </Field>
+        <Field Name="jkp_opr">
+          <rd:TypeName>System.Double</rd:TypeName>
+          <DataField>jkp_opr</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

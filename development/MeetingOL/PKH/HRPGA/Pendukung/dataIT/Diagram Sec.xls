@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title></title>
+<meta name="generator" content="PHP Report Maker v2.0.0.0" />
+</head>
+<body>
+OK
+<br /><br />
+<!-- crosstab report starts -->
+<div id="report_crosstab">
+<!-- Report grid (begin) -->
+<table id="ewReport" class="ewTable">
+	<!-- Table header -->
+	<tr class="ewTableRow">
+		<td colspan="2" nowrap><div class="phpreportmaker">laporan pelaksanaan (COUNT)&nbsp;</div></td>
+		<td class="ewRptColHeader" colspan="2" nowrap>
+			Nama Sec
+		</td>
+	</tr>
+	<tr>
+		<td class="ewRptGrpHeader1">
+			status
+		</td>
+		<td class="ewRptGrpHeader2">
+			Tgl Update
+		</td>
+<!-- Dynamic columns begin -->
+			<td class="ewTableHeader" valign="top">
+<div align="center"><b>Cashier</b></div>
+</td>
+			<td class="ewTableHeader" valign="top">
+<div align="center"><b>Finance-Tax</b></div>
+</td>
+	<!-- Dynamic columns end -->
+	</tr>
+	<!-- Data -->
+	<tr class="ewTableRow">
+		<!-- status -->
+		<td class="ewRptGrpField1"><div align="center">Open</div>
+</td>
+		<!-- Tgl Update -->
+		<td class="ewRptGrpField2">25/03/2011</td>
+<!-- Dynamic columns begin -->
+			<!-- Cashier -->
+		<td>
+1</td>
+			<!-- Finance-Tax -->
+		<td>
+0</td>
+	<!-- Dynamic columns end -->
+	</tr>
+	<!-- Data -->
+	<tr class="ewTableAltRow">
+		<!-- status -->
+		<td class="ewRptGrpField1"><div align="center">Close</div>
+</td>
+		<!-- Tgl Update -->
+		<td class="ewRptGrpField2">25/03/2011</td>
+<!-- Dynamic columns begin -->
+			<!-- Cashier -->
+		<td>
+0</td>
+			<!-- Finance-Tax -->
+		<td>
+1</td>
+	<!-- Dynamic columns end -->
+	</tr>
+	<!-- Grand Total -->
+	<tr class="ewRptGrandSummary">
+	<td colspan="2">Grand Total</td>
+<!-- Dynamic columns begin -->
+			<!-- Cashier -->
+		<td>
+1</td>
+			<!-- Finance-Tax -->
+		<td>
+1</td>
+	<!-- Dynamic columns end -->
+	</tr>
+</table>
+<br />
+</div>
+<!-- Crosstab report ends -->
+</body>
+</html>

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSource2">
+      <DataSourceReference>DataSource2</DataSourceReference>
+      <rd:DataSourceID>3f177cf8-bc20-4fa2-9d36-e8a91457aa67</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>2.5cm</BottomMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <PageWidth>21cm</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="DEPT">
+      <DataType>String</DataType>
+      <Prompt>DEPT</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Departemen</DataSetName>
+          <ValueField>Dept</ValueField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.91429cm</Height>
+        <Value>SKL Semua Departemen</Value>
+      </Textbox>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>2.53968cm</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>2.53968cm</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Departemen">
+                  <rd:DefaultName>Departemen</rd:DefaultName>
+                  <ZIndex>1</ZIndex>
+                  <Action>
+                    <Drillthrough>
+                      <ReportName>SKL_Per_Departemen</ReportName>
+                      <Parameters>
+                        <Parameter Name="DEPT">
+                          <Value>=Fields!Departemen.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                    </Drillthrough>
+                  </Action>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontWeight>700</FontWeight>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <BackgroundColor>#6e9eca</BackgroundColor>
+                    <Color>White</Color>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Departemen.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!Departemen.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Grouping Name="matrix1_Departemen">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Departemen.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="SKL">
+                  <rd:DefaultName>SKL</rd:DefaultName>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontWeight>700</FontWeight>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <BackgroundColor>#6e9eca</BackgroundColor>
+                    <Color>White</Color>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!SKL.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!SKL.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Grouping Name="matrix1_SKL">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SKL.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.53333cm</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>DataSource2</DataSetName>
+        <Top>1.25cm</Top>
+        <Width>5.07936cm</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox3">
+              <rd:DefaultName>textbox3</rd:DefaultName>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <FontFamily>Tahoma</FontFamily>
+                <BorderColor>
+                  <Default>LightGrey</Default>
+                </BorderColor>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <Value>
+              </Value>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.53333cm</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <TextAlign>Center</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <FontFamily>Tahoma</FontFamily>
+                      <BorderColor>
+                        <Default>LightGrey</Default>
+                      </BorderColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Count(Fields!TglAproved.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>2.31666cm</Height>
+  </Body>
+  <rd:ReportID>4c894056-9c41-4c9a-810a-ce4070882e56</rd:ReportID>
+  <LeftMargin>2.5cm</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSource2">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>SELECT A.NoSKL, B.Departemen, A.Aprovedept, A.TglAproved, A.Aprovehr, A.TglHRAproved, CASE A.SKL WHEN 'RT' THEN 'REST TIME' WHEN 'SN' THEN 'SENAM PAGI' WHEN 'PK' THEN 'PIKET MALAM' WHEN 'H7' THEN 'HARI KE 7' WHEN 'N' THEN 'HARI BIASA' ELSE A.SKL END AS SKL, A.Status, A.NrpRequestor, A.NRPAproved, A.NRPHR FROM Tbl_SKL1 AS A INNER JOIN Persis.dbo.tblKaryawan AS B ON A.NrpRequestor = B.Nrp WHERE (B.Departemen IN (@DEPT))</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@DEPT">
+            <Value>=Parameters!DEPT.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>DataSource2</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="NoSKL">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NoSKL</DataField>
+        </Field>
+        <Field Name="Departemen">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Departemen</DataField>
+        </Field>
+        <Field Name="Aprovedept">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Aprovedept</DataField>
+        </Field>
+        <Field Name="TglAproved">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>TglAproved</DataField>
+        </Field>
+        <Field Name="Aprovehr">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Aprovehr</DataField>
+        </Field>
+        <Field Name="TglHRAproved">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>TglHRAproved</DataField>
+        </Field>
+        <Field Name="SKL">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SKL</DataField>
+        </Field>
+        <Field Name="Status">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="NrpRequestor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NrpRequestor</DataField>
+        </Field>
+        <Field Name="NRPAproved">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NRPAproved</DataField>
+        </Field>
+        <Field Name="NRPHR">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NRPHR</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Departemen">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>Select Dept From tbl_dept</CommandText>
+        <DataSourceName>DataSource2</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Dept">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dept</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>14.25cm</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

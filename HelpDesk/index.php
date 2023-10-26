@@ -1,0 +1,1 @@
+<BODY> <SCRIPT language='Javascript'> alert('Belum Aktif !!');</SCRIPT> </BODY>

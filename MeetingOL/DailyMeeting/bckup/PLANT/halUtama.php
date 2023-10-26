@@ -1,0 +1,1 @@
+<BODY> <SCRIPT language='Javascript'> alert('Masih dalam percobaan !!'); close();</SCRIPT> </BODY>

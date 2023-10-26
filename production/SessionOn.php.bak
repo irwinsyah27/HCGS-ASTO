@@ -1,0 +1,16 @@
+<?php
+	session_start();
+	if ($R!="")
+    {		
+	$_SESSION[LogIn]=date("Y-m-d H:i:s");
+	$_SESSION[User]=$R;
+	$_SESSION[SNama]=$A;
+	$_SESSION[NamaSec]=$N;
+	$_SESSION[Dept]=$T;
+	header("location://RANTAPPU401:83/KPPApps");
+	exit();		
+    } else {
+	header("location://RANTAPPU401:83/SessionOff");
+	exit();	
+	}
+?>

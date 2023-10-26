@@ -1,0 +1,42 @@
+<%@ Master Language="VB" CodeFile="MasterHrga.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>HRGA Online</title>
+    <script src="GridViewHelper.js" type="text/javascript"></script>
+    <link href="GridViewHelper.css" rel="STYLESHEET" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="border-right: #99ccff 1px solid;
+            border-top: #99ccff 1px solid; border-left: #99ccff 1px solid; width: 100%; border-bottom: #99ccff 1px solid;
+            height: 100%">
+            <tr>
+                <td style="background-color: #ccff99">&nbsp;</td>
+                <td align="right" style="background-color: #ccff99">
+                    <asp:LinkButton ID="Login" runat="server" BackColor="#FFE0C0" BorderColor="#C04000"
+                        BorderStyle="None" BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"
+                        OnClientClick="Logout" Style="text-decoration: none" EnableTheming="True" Visible="False">.:: Login ::.</asp:LinkButton><asp:Label
+                            ID="User" runat="server" BackColor="#FFE0C0" BorderColor="#C04000" BorderStyle="None"
+                            BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"></asp:Label><asp:Label
+                                ID="Nama" runat="server" BackColor="#FFE0C0" BorderColor="#C04000" BorderStyle="None"
+                                BorderWidth="1px" Font-Bold="True" Font-Size="11px" ForeColor="Maroon"></asp:Label></td>
+            </tr>
+            <tr>
+                <td valign="top" colspan="2">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 100%">
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

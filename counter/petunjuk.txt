@@ -1,0 +1,4 @@
+1. Simpan folder ini ke dalam root folder "htdocs"
+2. Buat database dengan nama "ri32"
+3. Import file "counter.sql.zip" kedalam database "ri32"
+4. Dan jalankan progranya dengan menuliskan di browser : http://localhost/counter/counter.php

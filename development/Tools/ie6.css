@@ -1,0 +1,36 @@
+/* Fix for IE */
+
+body{
+	background-color:#E9E9E9;
+	background-image: none;
+}
+
+.item2{
+	margin-left:45px;
+}
+
+#login:hover{
+	background-image: none;
+}
+
+#title{
+	width:340px;
+	float:left;
+	margin-top:40px;
+	margin-left:60px;
+}
+
+.item{
+	width:440px;
+	margin-left:18px;
+}
+
+.input{
+	width:440px;
+	margin-left:18px;
+}
+
+.item2{
+	width:440px;
+	margin-left:18px;
+}

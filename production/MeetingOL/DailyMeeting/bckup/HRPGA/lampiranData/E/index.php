@@ -1,0 +1,1 @@
+<BODY> <SCRIPT language='Javascript'> alert('KOSONG !!'); close();</SCRIPT> </BODY>

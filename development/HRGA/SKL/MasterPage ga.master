@@ -1,0 +1,37 @@
+<%@ Master Language="VB" CodeFile="MasterPage ga.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+            <tr>
+                <td style="width: 100px; height: 121px; background-color: silver" valign="bottom">
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Width="720px">
+                        <Items>
+                            <asp:MenuItem Text="SKL" Value="SKL">
+                                <asp:MenuItem Text="Create SKL" Value="Create SKL"></asp:MenuItem>
+                                <asp:MenuItem Text="Review SKL" Value="Review SKL"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+                </td>
+            </tr>
+        </table>
+        &nbsp;
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.style6 {color: #000000; font-weight: bold; font-family: "Courier New", Courier, monospace; font-size: 18px; }
+.style7 {
+	color: #CCCCFF;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#Layer1 {
+	position:absolute;
+	left:17px;
+	top:85px;
+	width:991px;
+	height:39px;
+	z-index:1;
+}
+.style8 {color: #CCCCFF; font-weight: bold; font-family: "Courier New", Courier, monospace; font-size: 18px; }
